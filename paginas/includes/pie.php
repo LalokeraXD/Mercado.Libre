@@ -19,7 +19,7 @@
             <p>Términos y condiciones</p>
         </div>
     </div>
-    <p class="derechos">&copy;Todos los derechos reservados. Repostería Dulce Vida 2020</p>
+    <p class="derechos">&copy;Todos los derechos reservados. Mercado Libre 2023</p>
 </footer>
 <!-- Fin Pie de página -->
 
