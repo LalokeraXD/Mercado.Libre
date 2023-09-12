@@ -5,11 +5,11 @@
     $usuario = $_POST['usuario'];
     $password = $_POST['password'];
 
-    if ($usuario = 'admin' && $password == "123") {
-        redireccionar('Bienvenido Administrador', 'index.php');
-        $_SESSION['usuario'] = 'Administrador';
-    } else {
-        redireccionar('Datos incorrectos', 'entrar.php');
+    if($usuario="dlopez"&& $password=="2711"){
+        redireccionar('Bienvenido Daniel','index.php');
+        $_SESSION['usuario'] = 'dlopez';
+    }else{
+        redireccionar('Datos Incorrectos','entrar.php');
     }
 
 ?>

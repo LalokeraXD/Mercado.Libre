@@ -1,6 +1,7 @@
 
 .formulario-div {
-    background-image: url(../imagenes/fondo.png);
+    /*background-image: url(../imagenes/fondo.png);*/
+    background-color: #ebebeb;
     min-height: 80vh;
     display: grid;
     place-items: center;
@@ -10,8 +11,8 @@
 .formulario-div form {
     width: 400px;
     min-height: 60vh;
-    background: #f4f4e1;
-    border: 5px solid white;
+    background: whitesmoke;
+    border: 5px solid #fff159;
     padding: 3%;
     font-family: "Montserrat Alternates", sans-serif;
     font-size: 2rem;
@@ -28,12 +29,12 @@ input[type=text], input[type=password], input[type=number], input[type=file], te
 }
 
 label {
-    color: #774f38;
+    color: #002f6d;
 }
 
 .formulario-div h3 {
     text-align: center;
-    color: #42929d;
+    color: #002f6d;
     text-transform: uppercase;
-    border-bottom: 1px solid #42929d;
+    border-bottom: 1px solid #002f6d;
 }
