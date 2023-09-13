@@ -22,7 +22,7 @@ Array.from(botonesQuitar).forEach(boton => {
 });
 
 function removerProducto(evento) {
-    evento.target.parentElement.remove();
+    // evento.target.parentElement.remove();
     actualizarTotal();
 }
 
@@ -45,38 +45,38 @@ actualizarTotal();
 
 
 /////////////////////////BOTONES AGREGAR POSTRE////////////////////////////
-const botonesAgregar = document.querySelectorAll('.producto-tarjeta .boton');
+// const botonesAgregar = document.querySelectorAll('.producto-tarjeta .boton');
 
-Array.from(botonesAgregar).forEach(boton => {
+// Array.from(botonesAgregar).forEach(boton => {
     
-    boton.addEventListener('click', evento => {
-        let nombre = evento.target.parentElement.querySelector('.nombre');
-        let precio = evento.target.parentElement.querySelector('.precio');
+//     boton.addEventListener('click', evento => {
+//         let nombre = evento.target.parentElement.querySelector('.nombre');
+//         let precio = evento.target.parentElement.querySelector('.precio');
     
-        agregarAlCarrito(nombre.innerHTML, precio.innerHTML);
+//         agregarAlCarrito(nombre.innerHTML, precio.innerHTML);
         
-    });
+//     });
     
-});
+// });
 
-function agregarAlCarrito(nombre, precio){
+// function agregarAlCarrito(nombre, precio){
     
-    const productos = document.querySelector('.productos');
-    let renglon = document.createElement('div');
+//     const productos = document.querySelector('.productos');
+//     let renglon = document.createElement('div');
 
-    renglon.classList.add('renglon');
-    renglon.innerHTML = `<p class="postre">${nombre}</p>
-                         <p class="precio">$${precio}</p>
-                         <button class="boton-quitar">Quitar</button>`
+//     renglon.classList.add('renglon');
+//     renglon.innerHTML = `<p class="postre">${nombre}</p>
+//                          <p class="precio">$${precio}</p>
+//                          <button class="boton-quitar">Quitar</button>`
 
-    const boton = renglon.querySelector('.boton-quitar');
-    boton.addEventListener('click', removerProducto);
+//     const boton = renglon.querySelector('.boton-quitar');
+//     boton.addEventListener('click', removerProducto);
 
-    productos.append(renglon);
+//     productos.append(renglon);
 
-    alert('Producto agregado al carrito.');
+//     alert('Producto agregado al carrito.');
     
-}
+// }
 
 
 
