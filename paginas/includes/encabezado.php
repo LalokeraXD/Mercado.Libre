@@ -50,8 +50,9 @@ include 'utilerias.php';
                         echo "<div class='renglon'>
                             <p class='postre'>$nombreProducto</p>
                             <p class='precio'>$precioProducto</p>
-                            <form action='quitar-carrito.php' method='post'>
-                            <input type='hidden' value='$idProducto'>
+
+                            <form action='remover-carrito.php' method='post'>
+                            <input type='hidden' value='$idProducto' name='idProducto'>
                             <input type='submit' class='boton-quitar' value='Quitar'>
                             </form>
                             </div>";
