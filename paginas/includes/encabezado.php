@@ -2,7 +2,7 @@
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
-include 'utilerias.php';
+include  'utilerias.php';
 ?>
 
 <!DOCTYPE html>
@@ -40,44 +40,28 @@ include 'utilerias.php';
                     redireccionar('Error en la conexión.', 'index.php');
                     return;
                 }
-                $sql = "SELECT p.nombreProducto,p.precioProducto,p.idProducto FROM carrito c INNER JOIN usuarios u ON u.idUsuario = c.idUsuario INNER JOIN productos p ON p.idProducto = c.idProducto WHERE u.idUsuario = 1";
+                $sql = "SELECT p.nombreProducto,p.precioProducto,p.idProducto,u.idUsuario FROM carrito c INNER JOIN usuarios u ON u.idUsuario = c.idUsuario INNER JOIN productos p ON p.idProducto = c.idProducto WHERE u.idUsuario = 1";
                 $resultado = mysqli_query($conexion, $sql);
                 if(mysqli_num_rows($resultado) > 0){
                     while($renglon = mysqli_fetch_assoc($resultado)){
                         $nombreProducto = $renglon['nombreProducto'];
                         $precioProducto = $renglon['precioProducto'];
                         $idProducto = $renglon['idProducto'];
+                        $idUsuario = $renglon['idUsuario'];
                         echo "<div class='renglon'>
                             <p class='postre'>$nombreProducto</p>
                             <p class='precio'>$precioProducto</p>
 
-                            <form action='remover-carrito.php' method='post'>
+                            <form action='includes/remover-carrito.php' method='post'>
+                            <input type='hidden' value='$idUsuario' name='idUsuario'>
                             <input type='hidden' value='$idProducto' name='idProducto'>
                             <input type='submit' class='boton-quitar' value='Quitar'>
                             </form>
                             </div>";
-            
                     }
                 }
                 ?>
-                <div class="renglon">
-                    <p class="postre" name="producto">Pastel de Chocolate</p>
-                    <p class="precio" name="precio">$420.00</p>
-                    <form action='quitar-carrito.php' method='post'>
-                            <input type='hidden' value='$idProducto'>
-                            <input type='submit' class='boton-quitar' value='Quitar'>
-                            </form>
-                </div>
-                <div class="renglon">
-                    <p class="postre">Pastel de Fresa</p>
-                    <p class="precio">$390.00</p>
-                    <button class="boton-quitar">Quitar</button>
-                </div>
-                <div class="renglon">
-                    <p class="postre">Pastel de Vainilla</p>
-                    <p class="precio">$320.00</p>
-                    <button class="boton-quitar">Quitar</button>
-                </div>
+                
             </div>
 
             <div class="total">
