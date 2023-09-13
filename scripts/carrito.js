@@ -13,6 +13,17 @@ carritoBoton.addEventListener('click', () => {
         carritoFondo.style.visibility = "hidden";
     }
 });
+document.addEventListener('DOMContentLoaded', function () {
+    if (carritoFondo) {
+        carritoFondo.addEventListener('click', (event) => {
+            if (event.target === carritoFondo) {
+                carritoVisible = false;
+                carritoFondo.style.visibility = "hidden";
+            }
+            console.log(event.target);
+        });
+    }
+});
 
 ///////////////////BOTONES QUITAR////////////////////////////////
 
