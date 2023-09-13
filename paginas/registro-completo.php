@@ -2,10 +2,10 @@
 
 include('includes/utilerias.php');
 
-if (isset($_POST['contra'])) {
-    $contra = $_POST['contra'];
+if (isset($_POST['e-mail'])) {
+    $contra = $_POST['e-mail'];
 
-    if ($contra=== 'admin') {
+    if ($contra=== 'admin@gmail') {
         ?>
         <?php include('includes/encabezado.php'); ?>
         <div class="formulario-div">
@@ -21,10 +21,10 @@ if (isset($_POST['contra'])) {
         <?php
        
     } else {
-        redireccionar('No se pudo almacenar. Intente de nuevo', 'registroContra.php');
+       // redireccionar('No se pudo almacenar. Intente de nuevo', 'registroContra.php');
     }
 } else {
-    redireccionar('No se pudo almacenar. Intente de nuevo', 'registroNombre.php');
+    //redireccionar('No se pudo almacenar. Intente de nuevo', 'registroNombre.php');
 }
 
 
