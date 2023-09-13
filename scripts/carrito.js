@@ -8,6 +8,7 @@ carritoBoton.addEventListener('click', () => {
 
     if(carritoVisible){
         carritoFondo.style.visibility = "visible";
+        actualizarTotal();
     } else {
         carritoFondo.style.visibility = "hidden";
     }
@@ -52,20 +53,22 @@ Array.from(botonesAgregar).forEach(boton => {
     boton.addEventListener('click', evento => {
         let nombre = evento.target.parentElement.querySelector('.nombre');
         let precio = evento.target.parentElement.querySelector('.precio');
+        let imagen = evento.target.parentElement.querySelector('.imagen').src;
     
-        agregarAlCarrito(nombre.innerHTML, precio.innerHTML);
+        agregarAlCarrito(nombre.innerHTML, precio.innerHTML, imagen);
         
     });
     
 });
 
-function agregarAlCarrito(nombre, precio){
+function agregarAlCarrito(nombre, precio, imagen){
     
     const productos = document.querySelector('.productos');
     let renglon = document.createElement('div');
 
     renglon.classList.add('renglon');
-    renglon.innerHTML = `<p class="postre">${nombre}</p>
+    renglon.innerHTML = `<img class="imagen-carrito" src="${imagen}">
+                         <p class="postre">${nombre}</p>
                          <p class="precio">$${precio}</p>
                          <button class="boton-quitar">Quitar</button>`
 

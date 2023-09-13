@@ -30,25 +30,16 @@
 
             <div class="productos">
                 <div class="renglon">
+                    <img src="../imagenes/pastel.png" class="imagen-carrito">
                     <p class="postre">Pastel de Chocolate</p>
                     <p class="precio">$420.00</p>
-                    <button class="boton-quitar">Quitar</button>
-                </div>
-                <div class="renglon">
-                    <p class="postre">Pastel de Fresa</p>
-                    <p class="precio">$390.00</p>
-                    <button class="boton-quitar">Quitar</button>
-                </div>
-                <div class="renglon">
-                    <p class="postre">Pastel de Vainilla</p>
-                    <p class="precio">$320.00</p>
                     <button class="boton-quitar">Quitar</button>
                 </div>
             </div>
 
             <div class="total">
                 <p>Total</p>
-                <p class="precio-total">$1200.00</p>
+                <p class="precio-total">$420.00</p>
             </div>
 
             <button class="boton boton-compra">Realizar Compra</button>
@@ -76,7 +67,7 @@
                         echo '<li><a href="agregar.php">Agregar postre</a></li>';
                     } else {
                         echo '<li><a href="entrar.php">Entrar</a></li>';
-                        echo '<li><a href="#">Crear cuenta</a></li>';
+                        echo '<li><a href="registro.php">Crear cuenta</a></li>';
                     }
                 ?>
 
