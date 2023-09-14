@@ -1,9 +1,9 @@
 <?php
     function redireccionar($mensaje, $dir) {
         include('includes/encabezado.php');
-        echo '<div class="formulario-div" style="color:brown">';
+        echo '<div class="formulario-div" style="color:#002f6d">';
         echo '<h1 style="text-align:center">' . $mensaje .'</h1>';
-        echo '<h4 style="text-align:center">Redireccionando<h4>';
+        echo '<h2 style="text-align:center">Redireccionando<h2>';
         echo '</div>';
         include('includes/pie.php');
         header('refresh:3, url=' . $dir);
