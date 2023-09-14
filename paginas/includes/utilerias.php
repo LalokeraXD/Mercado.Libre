@@ -20,7 +20,7 @@
         DEFINE('SERVIDOR', 'localhost');
         DEFINE('USUARIO', 'root');
         DEFINE('PASSWORD', '');
-        DEFINE('BD', 'pasteleria');
+        DEFINE('BD', 'mercadolibre');
 
         $resultado = mysqli_connect(SERVIDOR, USUARIO, PASSWORD, BD);
 
