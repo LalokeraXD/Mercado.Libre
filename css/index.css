@@ -233,7 +233,7 @@ nav {
 }
 
 .logo h2 {
-    font-family: "Pacifico", serif;
+    font-family: "Harabara Mais Demo", sans-serif;
     color: white;
 }
 
@@ -249,7 +249,7 @@ nav {
 }
 
 #menu { 
-    font-family: "Montserrat Alternates", serif;
+    font-family: "Harabara Mais Demo", sans-serif;
     list-style: none;    
     text-transform: uppercase;
     display: flex;
@@ -312,7 +312,7 @@ nav {
 }
 
 .tarjeta-inicio p {
-    font-family: "Montserrat Alternates", serif;
+    font-family: "Harabara Mais Demo", sans-serif;
     font-size: 1.6rem;
     text-align: center;
 }
@@ -419,7 +419,7 @@ a.boton {
 }
 
 .categoria-titulo {
-    font-family: "Patua One", serif;
+    font-family: "Harabara Mais Demo", sans-serif;
     text-align: center;
     color: #774F38;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -438,7 +438,7 @@ a.boton {
 
 .categoria-tarjeta h2 {
     color: #42929D;
-    font-family: "Patua One", serif;
+    font-family: "Harabara Mais Demo", sans-serif;
     padding: 10vh 0 2vh 0; 
 }
 
@@ -475,7 +475,7 @@ a.boton {
 }
 
 .direccion-tarjeta {
-    font-family: "Montserrat Alternates", serif;
+    font-family: "Harabara Mais Demo", sans-serif;
     width: 90%;
     margin: auto;
     background: #F4F4E1;
@@ -553,7 +553,7 @@ footer .derechos {
     
     #menu {
         background: #42929D;    
-        font-family: "Montserrat Alternates", serif;
+        font-family: "Harabara Mais Demo", sans-serif;
         list-style: none;
         color: white;
         text-transform: uppercase;

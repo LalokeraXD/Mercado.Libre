@@ -3,11 +3,6 @@
 <!-- Inicio Pie de página -->
 <footer>
     <div class="columnas-pie">
-        <div class="contacto">
-            <h4>Contacto</h4>
-            <p>Teléfono: 311 322 4598</p>
-            <p>correo: contacto@dulcevida.com</p>
-        </div>
         <div class="redes">
             <h4>Síguenos</h4>
             <p>Facebook</p>

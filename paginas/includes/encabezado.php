@@ -83,15 +83,15 @@ if (session_status() == PHP_SESSION_NONE) {
             <h2 id="menu-boton">&#9776;</h2>
             <ul id="menu">
                 <li><a href="index.php">Inicio</a></li>
-                <li><a href="index.php#postres">Postres</a></li>
-                <li><a href="index.php#direccion">Dirección</a></li>
-
+                <li><a href="index.php#postres">Productos</a></li>
+                <!--<li><a href="index.php#direccion">Dirección</a></li> -->
+                
                 <?php
                     if(isset($_SESSION['usuario'])) {
                         echo '<li><a href="salir.php">Salir</a></li>';
                         echo '<li><a href="agregar.php">Agregar postre</a></li>';
                     } else {
-                        echo '<li><a href="entrar.php">Entrar</a></li>';
+                        echo '<li><a href="entrar.php">Iniciar Sesión</a></li>';
                         echo '<li><a href="registro.php">Crear cuenta</a></li>';
                     }
                 ?>
