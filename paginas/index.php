@@ -5,19 +5,19 @@
         <!--Sección de inicio-->
         <section class="seccion-inicio" id="inicio">
 
-            <div class="tarjeta-inicio">
+            <!-- <div class="tarjeta-inicio">
                 <h1>Repostería <span>DulceVida</span></h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, beatae?</p>
-                <!--<button class="boton">Ver Postres</button>-->
-                <a href="verpostres.php" class="boton">Ver postres</a>
-            </div>
+                <button class="boton">Ver Postres</button>-->
+                <!-- <a href="verpostres.php" class="boton">Ver postres</a>
+            </div> --> 
 
             <div class="img-contenedor">
 
                 <script src="../scripts/carrusel.js" defer></script>  
 
                 <div class="carrusel">
-                    <img src="../imagenes/pastel.png" alt="">
+                    <img src="../imagenes/c1.jpg" alt="">
                     <img src="../imagenes/pastel.png" alt="">
                     <img src="../imagenes/pastel.png" alt="">
                     <img src="../imagenes/pastel.png" alt="">

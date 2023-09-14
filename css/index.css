@@ -8,116 +8,14 @@ html {
     scroll-behavior: smooth;
 }
 
-/* ------------- CARRITO DE COMPRAS ----------------- */
-.carrito-boton {
-    width: 40px;
-    background: #42929D;
-    border: 3px solid white;
-    border-radius: 50%;
-    position: fixed;
-    top: 8%;
-    left: 5%;
-    z-index: 15;
-    box-shadow: 0 0 5px gray;
-    cursor: pointer;
-    transition: background 0.3s;
-}
 
-.carrito-boton:hover {
-    background: #E08E79;
-}
-
-.carrito-fondo {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 12;
-    background: rgba(255, 255, 255, 0.8);
-    display: grid;
-    place-items: center;
-    visibility: hidden;
-}
-
-.carrito-ventana {
-    width: 400px;
-    background: #42929D;
-    border: 5px solid #21575e;
-    padding: 10px;
-}
-
-.carrito-ventana .titulo {
-    color: white;
-    font-family: "Patua One", serif;
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.carrito-ventana .encabezado-detalle,
-.carrito-ventana .total {
-    color: white;
-    font-family: "Balsamiq Sans", sans-serif;
-    display: grid;
-    grid-template-columns: 3fr 1fr 1fr;
-    border-bottom: 1px solid white;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-}
-
-.carrito-ventana .total {
-    border-bottom: none;
-    border-top: 1px solid white;
-}
-
-.renglon .precio,
-.total .precio-total {
-    text-align: right;
-}
-
-.encabezado-detalle .columna-precio {
-    text-align: center;
-}
-
-.productos .renglon {
-    color: white;
-    font-family: "Balsamiq Sans", sans-serif;
-    display: grid;
-    grid-template-columns: 3fr 1fr 1fr;
-    margin-bottom: 10px;
-}
-
-.carrito-ventana .renglon .boton-quitar {
-    color: #42929D;
-    font-family: "Balsamiq Sans", sans-serif;
-    background: #F4F4E1;
-    border: none;
-    cursor: pointer;
-    transition: background 0.5s;
-    margin-left: 5px;
-}
-
-.carrito-ventana .renglon .boton-quitar:hover {
-    background: #E08E79;
-    color: white;
-}
-
-.carrito-ventana .boton-compra {
-    width: 100%;
-}
-
-.carrito-ventana .boton-compra:hover {
-    background: #F4F4E1;
-    color: #42929D;
-}
 
 /* ------------- MENÚ INICIAL ----------------- */
 
 .nav-contenedor {
     width: 100%;
     position: sticky;
-    background: #E08E79;    
+    background: #fff159;    
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     top: 0;
     z-index: 10;
@@ -137,12 +35,12 @@ nav {
 }
 
 .logo img{
-    width: 3rem;
+    width: 10rem;
     height: 3rem;
 }
 
 .logo h2 {
-    font-family: "Pacifico", serif;
+    font-family: "Harabara Mais Demo", sans-serif;
     color: white;
 }
 
@@ -154,11 +52,11 @@ nav {
 }
 
 #menu-boton:hover {
-    color: #774F38;
+    color: gray;
 }
 
 #menu { 
-    font-family: "Montserrat Alternates", serif;
+    font-family: "Harabara Mais Demo", sans-serif;
     list-style: none;    
     text-transform: uppercase;
     display: flex;
@@ -173,7 +71,7 @@ nav {
 }
 
 #menu li a:hover {
-    color: #774F38;    
+    color: gray;    
 }
 
 #menu li a {
@@ -188,17 +86,17 @@ nav {
 /* ------------- SECCIÓN INICIO ----------------- */
 
 .seccion-inicio {
-    background-image: url("../imagenes/fondo.png");
+    background-color: white;
     min-height: 95vh;
     padding: 5%;    
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
     gap: 50px;
     align-content: center;
 }
 
 .tarjeta-inicio {
-    background: #F4F4E1;
+    background: #f5f5f1;
     border: 5px solid #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);    
     padding: 3%;
@@ -248,7 +146,8 @@ a.boton {
 }
 
 .img-contenedor {
-    height: 60vh;
+    height: 65vh;
+    width: 100%;
     border: 5px solid #FFFFFF;
     box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -302,7 +201,7 @@ a.boton {
 /* ------------- SECCIÓN CATEGORIAS ----------------- */
 
 .seccion-categorias {
-    background: #F4F4E1;
+    background: #f5f5f1;
 }
 
 .contenedor-tarjetas {
@@ -423,8 +322,8 @@ a.boton {
 /* ------------- PIE DE PÁGINA ----------------- */
 
 footer {
-    background: #42929D;
-    color: white;
+    background: #fff159;
+    color: black;
     font-family: "Montserrat Alternates", serif;
     font-size: 1rem;
 }
@@ -443,7 +342,7 @@ footer .contacto, footer .redes, footer .general {
 }
 
 footer .derechos {
-    background: #21575e;
+    background: #ffe103;
     text-align: center;
     padding: 1.5vh;
 }
