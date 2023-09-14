@@ -1,55 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Repostería Dulce Vida</title>
-</head>
-<body>
-    <nav>
-        <img src="../imagenes/cake.png" alt="">
-        <h2>Dulce Vida</h2>
-        <ul>
-            <li>Inicio</li>
-            <li>Postres</li>
-            <li>Dirección</li>
-            <li>Ingresar</li>
-            <li>Crear Cuenta</li>            
-        </ul>
-    </nav>
-    <main>
-        
-        <form action="#" method="post">
-            <h2>Entrada</h2>
-            <input type="text" placeholder="Nombre">
-            <input type="text" placeholder="Apellidos">
-            <input type="email" placeholder="Correo">
-            <input type="email" placeholder="Confirmar correo">
-            <input type="password" placeholder="Contraseña">
-            <input type="password" placeholder="Confirmar Contraseña">
-            <input type="checkbox">
-            <p>Recibir ofertas por correo.</p>
-            <input type="checkbox">
-            <p>Aceptos los términos del servicio.</p>            
-            <input type="submit" value="Entrar">            
-            <input type="reset" value="Borrar">            
-        </form>
-        
-    </main>
+<?php
+    include('includes/encabezado.php');
+?>
 
-    <!-- Inicio Pie de página -->
-    <footer>
-        <h4>Contacto</h4>
-        <p>Teléfono: 311 322 4598</p>
-        <p>correo: contacto@dulcevida.com</p>
-        <h4>Síguenos</h4>
-        <p>Facebook</p>
-        <p>Instagram</p>
-        <p>Preguntas frecuentes</p>
-        <p>Políticas del sitio</p>
-        <p>Términos y condiciones</p>
-        <p>&copy;Todos los derechos reservados. Repostería Dulce Vida 2020</p>
-    </footer>
-    <!-- Fin Pie de página -->        
-</body>
-</html>
+<div class="formulario-div2">
+    <form action="registro-completo.php" method="post">
+        <h3 style="font-size: 1.6rem;">Registrate</h3>
+        <p style="font-size: 0.9rem;">Es rápido y fácil.</p>
+        
+        <div class="row g-3">
+            <div class="col">
+            <div class="form-floating">
+                <input type="email" class="form-control" name="e-mail" id="email" placeholder="name@example.com">
+                <label for="floatingInput"style="font-size: 1rem;" >Correo electrónico</label>
+            </div>
+            </div>
+            <div class="col">
+            <div class="form-floating">
+        <input type="text" class="form-control" name="nombre" id="nombre" placeholder="nombre" >
+        <label for="floatingInput"style="font-size: 1rem; padding: 0.9rem;" >Nombre</label>
+        </div>
+             </div>
+        </div>
+        <p style="font-size: 0.9rem; margin-top: 2rem">Ingresa una contraseña segura</p>
+        <div class="form-floating mb-3">
+        <input type="password" class="form-control" name="contraseña" id="contraseña" placeholder="" >
+        <label for="floatingInput"style="font-size: 1rem; padding: 0.7rem;" >Contraseña</label>
+        </div>
+        <ul>
+            <li style="font-size: 0.8rem;">Mínimo 8 caracteres con letras y números.</li>
+            <li style="font-size: 0.8rem;">No incluya secuencias tales como 12345.</li>
+            <li style="font-size: 0.8rem;">No incluir su nombre o apellidos.</li>
+        </ul>
+        <div class="form-floating mb-3">
+        <input type="password" class="form-control" name="contraseña2" id="contraseña2" placeholder="" >
+        <label for="floatingInput"style="font-size: 1rem; padding: 0.7rem;" >Confirma la contraseña</label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" value="" id="terminos">
+            <label class="form-check-label" for="terminos" style="font-size: 0.9rem; margin-bottom: 1rem;">
+                Acepto los Términos y condiciones y autorizo el uso de mis datos.
+            </label>
+        </div>
+
+        <button type="submit" class="boton">Continuar</button>
+    </form>
+</div>
+
+<script>
+    var inputElement = document.getElementById('email');
+    window.addEventListener('load', function() {
+        inputElement.focus();
+    });
+</script>
+
+
+<?php
+    include('includes/pie.php');
+?>

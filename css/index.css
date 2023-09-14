@@ -11,7 +11,7 @@ html {
 /* ------------- CARRITO DE COMPRAS ----------------- */
 .carrito-boton {
     width: 40px;
-    background: #42929D;
+    background: #002f6d;
     border: 3px solid white;
     border-radius: 50%;
     position: fixed;
@@ -24,7 +24,7 @@ html {
 }
 
 .carrito-boton:hover {
-    background: #E08E79;
+    background: #225eac;
 }
 
 .carrito-fondo {
@@ -49,7 +49,7 @@ html {
 
 .carrito-ventana .titulo {
     color: white;
-    font-family: "Patua One", serif;
+    font-family: "Harabara Mais Demo", sans-serif;
     font-size: 2rem;
     text-align: center;
     margin-bottom: 20px;
@@ -58,7 +58,7 @@ html {
 .carrito-ventana .encabezado-detalle,
 .carrito-ventana .total {
     color: white;
-    font-family: "Balsamiq Sans", sans-serif;
+    font-family: "Harabara Mais Demo", sans-serif;
     display: grid;
     grid-template-columns: 3fr 1fr 1fr;
     border-bottom: 1px solid white;
@@ -82,7 +82,7 @@ html {
 
 .productos .renglon {
     color: white;
-    font-family: "Balsamiq Sans", sans-serif;
+    font-family: "Harabara Mais Demo", sans-serif;
     display: grid;
     grid-template-columns: 3fr 1fr 1fr;
     margin-bottom: 10px;
@@ -90,7 +90,7 @@ html {
 
 .carrito-ventana .renglon .boton-quitar {
     color: #42929D;
-    font-family: "Balsamiq Sans", sans-serif;
+    font-family: "Harabara Mais Demo", sans-serif;
     background: #F4F4E1;
     border: none;
     cursor: pointer;
@@ -117,7 +117,7 @@ html {
 .nav-contenedor {
     width: 100%;
     position: sticky;
-    background: #E08E79;    
+    background: #fff159;    
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     top: 0;
     z-index: 10;
@@ -137,12 +137,12 @@ nav {
 }
 
 .logo img{
-    width: 3rem;
+    width: 10rem;
     height: 3rem;
 }
 
 .logo h2 {
-    font-family: "Pacifico", serif;
+    font-family: "Harabara Mais Demo", sans-serif;
     color: white;
 }
 
@@ -158,7 +158,7 @@ nav {
 }
 
 #menu { 
-    font-family: "Montserrat Alternates", serif;
+    font-family: "Harabara Mais Demo", sans-serif;
     list-style: none;    
     text-transform: uppercase;
     display: flex;
@@ -173,12 +173,12 @@ nav {
 }
 
 #menu li a:hover {
-    color: #774F38;    
+    color: grey;    
 }
 
 #menu li a {
     text-decoration: none;
-    color: white;    
+    color: black;    
     transition: color 0.5s;
 }
 
@@ -221,14 +221,14 @@ nav {
 }
 
 .tarjeta-inicio p {
-    font-family: "Montserrat Alternates", serif;
+    font-family: "Harabara Mais Demo", sans-serif;
     font-size: 1.6rem;
     text-align: center;
 }
 
 .boton {
-    background: #E08E79;
-    font-family: "Montserrat Alternates", serif;
+    background: #002f6d;
+    font-family: "Harabara Mais Demo", sans-serif;
     font-size: 1.2rem;
     color: white;
     display: block;    
@@ -239,7 +239,7 @@ nav {
 }
 
 .boton:hover {
-    background: #42929D;
+    background: #225eac;
 }
 
 a.boton {
@@ -327,7 +327,7 @@ a.boton {
 }
 
 .categoria-titulo {
-    font-family: "Patua One", serif;
+    font-family: "Harabara Mais Demo", sans-serif;
     text-align: center;
     color: #774F38;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -346,7 +346,7 @@ a.boton {
 
 .categoria-tarjeta h2 {
     color: #42929D;
-    font-family: "Patua One", serif;
+    font-family: "Harabara Mais Demo", sans-serif;
     padding: 10vh 0 2vh 0; 
 }
 
@@ -383,7 +383,7 @@ a.boton {
 }
 
 .direccion-tarjeta {
-    font-family: "Montserrat Alternates", serif;
+    font-family: "Harabara Mais Demo", sans-serif;
     width: 90%;
     margin: auto;
     background: #F4F4E1;
@@ -423,9 +423,9 @@ a.boton {
 /* ------------- PIE DE PÁGINA ----------------- */
 
 footer {
-    background: #42929D;
-    color: white;
-    font-family: "Montserrat Alternates", serif;
+    background: #fff159;
+    color: black;
+    font-family: "Harabara Mais Demo", sans-serif;
     font-size: 1rem;
 }
 
@@ -443,7 +443,7 @@ footer .contacto, footer .redes, footer .general {
 }
 
 footer .derechos {
-    background: #21575e;
+    background: #ffe103;
     text-align: center;
     padding: 1.5vh;
 }
@@ -461,7 +461,7 @@ footer .derechos {
     
     #menu {
         background: #42929D;    
-        font-family: "Montserrat Alternates", serif;
+        font-family: "Harabara Mais Demo", sans-serif;
         list-style: none;
         color: white;
         text-transform: uppercase;
