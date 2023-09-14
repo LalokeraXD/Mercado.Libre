@@ -23,7 +23,7 @@
         </select>
 
         <label for="precio">Precio</label>
-        <input type="number" id="precio" name="precio" step=".01" required>
+        <input type="number" id="precio" name="precio" step="10" required>
 
         <label for="imagen">Imagen</label>
         <input type="file" id="imagen" name="imagen">
