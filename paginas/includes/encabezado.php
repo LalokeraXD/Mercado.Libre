@@ -11,8 +11,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Respostería Dulce Vida</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&family=Pacifico&family=Patua+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/formulario.css">
+    <link rel="stylesheet" href="../css/index_dani.css">
+    <link rel="stylesheet" href="../css/formulario_dani.css">
     <link rel="stylesheet" href="../css/verpostres.css">
     <script src="../scripts/menu.js" defer></script>  
     <script src="../scripts/carrito.js" defer></script>  
