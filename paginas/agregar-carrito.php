@@ -6,30 +6,30 @@ if(empty($_POST)){
     return;
 }
 
+$paginaError = 'verpostres.php';
+
 $idProducto = validar($_POST['idProducto']);
 $idUsuario = validar($_POST['idUsuario']);
 
-$sql = "INSERT (idUsuario,idProducto) INTO carrito VALUES ($idUsuario,$idProducto)";
 
 if($idUsuario == '' || $idProducto == '') {
-    redireccionar('Información no válida.', 'index.php');
+    redireccionar('Información no válida.', $paginaError);
     return;
 }
 
 $conexion = conectar();
 if (!$conexion) {
-    redireccionar('Error en la conexión.', 'index.php');
+    redireccionar('Error en la conexión.', $paginaError);
     return;
 }
-
-$resultado = mysqli_query($conexion, $sql);
+$sql = "INSERT INTO carrito(idUsuario,idProducto,cantidadProductoCarrito) VALUES ($idUsuario,$idProducto,1)";
 
 $resultado = mysqli_query($conexion, $sql);
 
 if($resultado) {
-    redireccionar('Datos guardados exitosamente.', 'agregar.php');
+    redireccionar('Agregado al carrito!', 'carrito.php');
 } else {
-    redireccionar('Error: ' . mysql_error($conexion), 'agregar.php');
+    redireccionar('Error: ' . mysqli_error($conexion), $paginaError);
 }
 
 mysqli_close($conexion);

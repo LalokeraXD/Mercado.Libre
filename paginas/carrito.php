@@ -1,6 +1,6 @@
 <?php
 include('includes/encabezado.php');
-//include('includes/utilerias.php');
+include('includes/utilerias.php');
 ?>
 
 <div class="contenedor-carrito">
@@ -12,7 +12,13 @@ include('includes/encabezado.php');
         </div>
         <div class="productos">
             <p class="carrito-vacio">No hay ningún producto en el carrito.</p>
-            <div class="renglon">
+            <?php
+            $conexion = conectar();
+            ver_carrito(1, $conexion);
+
+            mysqli_close($conexion);
+            ?>
+            <!-- <div class="renglon">
                 <img class="imagen-carrito" src="../imagenes/pastel.png">
                 <div class="contenedor-prod-boton">
                     <p class="postre">Pastel</p>
@@ -27,21 +33,8 @@ include('includes/encabezado.php');
                     </div>
                 </div>
             </div>
-            <div class="renglon">
-                <img class="imagen-carrito" src="../imagenes/pastel_chocolate.png">
-                <div class="contenedor-prod-boton">
-                    <p class="postre">Pastel de chocolate</p>
-                    <button class="boton-quitar">Eliminar</button>
-                </div>
-                <p class="precio">$300.00</p>
-                <div class="contenedor-cantidad">
-                    <div class="cantidad">
-                        <p class="disminuir">—</p>
-                        <p class="num-cant" id="editable" contenteditable="true">1</p>
-                        <p class="aumentar">+</p>
-                    </div>
-                </div>
-            </div>
+             -->
+            
         </div>
 
         <div class="total">
@@ -55,5 +48,39 @@ include('includes/encabezado.php');
 </div>
 
 <?php
+
+function ver_carrito($usuario,$conexion)
+{
+    $sql = "select * from carrito c inner join productos p on p.idProducto = c.idProducto where idUsuario = $usuario";
+
+    $resultado = mysqli_query($conexion, $sql);
+
+    echo "<div class='renglon'>";
+    if (mysqli_num_rows($resultado) > 0) {
+        while ($renglon = mysqli_fetch_assoc($resultado)) {
+            $nombreProducto = $renglon['nombreProducto'];
+            $precioProducto = $renglon['precioProducto'];
+            $imagenProducto = $renglon['imagenProducto'];
+            $cantidadProducto = $renglon['cantidadProductoCarrito'];
+
+            echo "
+            <img class='imagen-carrito' src='$imagenProducto'>
+                <div class='contenedor-prod-boton'>
+                    <p class='postre'>$nombreProducto</p>
+                    <button class='boton-quitar'>Eliminar</button>
+                </div>
+                <p class='precio'>$$precioProducto</p>
+                <div class='contenedor-cantidad'>
+                    <div class='cantidad'>
+                        <p class='disminuir'>—</p>
+                        <p class='num-cant' id='editable' contenteditable='true'>$cantidadProducto</p>
+                        <p class='aumentar'>+</p>
+                    </div>
+                </div>
+            </div>";
+        }
+    }
+}
+
 include('includes/pie.php');
 ?>

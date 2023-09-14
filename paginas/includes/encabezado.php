@@ -20,58 +20,6 @@ if (session_status() == PHP_SESSION_NONE) {
 </head>
 
 <body>
-
-    <!-- <img src="../imagenes/cart.png" alt="" class="carrito-boton"> -->
-    <!-- <div class="carrito-fondo">
-        <div class="carrito-ventana">
-            <p class="titulo">Carrito de Compras</p>
-            <div class="encabezado-detalle">
-                <p class="columna-producto">Producto</p>
-                <p class="columna-precio">Precio</p>
-            </div>
-
-            <div class="productos">
-                <?php
-                // $conexion = conectar();
-                // if (!$conexion) {
-                //     redireccionar('Error en la conexión.', 'index.php');
-                //     return;
-                // }
-                // $sql = "SELECT p.nombreProducto,p.precioProducto,p.idProducto,u.idUsuario FROM carrito c INNER JOIN usuarios u ON u.idUsuario = c.idUsuario INNER JOIN productos p ON p.idProducto = c.idProducto WHERE u.idUsuario = 1";
-                // $resultado = mysqli_query($conexion, $sql);
-                // if(mysqli_num_rows($resultado) > 0){
-                //     while($renglon = mysqli_fetch_assoc($resultado)){
-                //         $nombreProducto = $renglon['nombreProducto'];
-                //         $precioProducto = $renglon['precioProducto'];
-                //         $idProducto = $renglon['idProducto'];
-                //         $idUsuario = $renglon['idUsuario'];
-                //         echo "<div class='renglon'>
-                //             <p class='postre'>$nombreProducto</p>
-                //             <p class='precio'>$precioProducto</p>
-
-                //             <form action='includes/remover-carrito.php' method='post'>
-                //             <input type='hidden' value='$idUsuario' name='idUsuario'>
-                //             <input type='hidden' value='$idProducto' name='idProducto'>
-                //             <input type='submit' class='boton-quitar' value='Quitar'>
-                //             </form>
-                //             </div>";
-                //     }
-                // }
-                ?>
-                
-            </div>
-
-            <div class="total">
-                <p>Total</p>
-                <p class="precio-total">$1200.00</p>
-            </div>
-
-            <button class="boton boton-compra">Realizar Compra</button>
-
-        </div>
-    </div> -->
-
-
     <a href="carrito.php"><img src="../imagenes/cart.png" alt="" class="carrito-boton"></a>
     
     <!-- Navegación del la página -->
