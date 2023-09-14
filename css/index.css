@@ -19,6 +19,7 @@ html {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     top: 0;
     z-index: 10;
+    height: 100%;
 }
 
 nav {
@@ -41,18 +42,18 @@ nav {
 
 .logo h2 {
     font-family: "Harabara Mais Demo", sans-serif;
-    color: white;
+    color: #002f6d;
 }
 
 #menu-boton {
     display: none;
-    color: white;
+    color: #002f6d;
     cursor: pointer;        
     transition: color 0.3s;
 }
 
 #menu-boton:hover {
-    color: gray;
+    color: #002f6d;
 }
 
 #menu { 
@@ -71,12 +72,12 @@ nav {
 }
 
 #menu li a:hover {
-    color: gray;    
+    color: white;    
 }
 
 #menu li a {
     text-decoration: none;
-    color: white;    
+    color: #002f6d;    
     transition: color 0.5s;
 }
 
@@ -87,46 +88,21 @@ nav {
 
 .seccion-inicio {
     background-color: white;
-    min-height: 95vh;
+    min-height: 5vh;
     padding: 5%;    
     display: grid;
     /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
-    gap: 50px;
+    gap: 15px;
     align-content: center;
 }
 
-.tarjeta-inicio {
-    background: #f5f5f1;
-    border: 5px solid #FFFFFF;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);    
-    padding: 3%;
-    height: 60vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;    
-}
 
-.tarjeta-inicio h1 {
-    font-family: Pacifico;
-    color: #774F38;
-    font-size: 3rem;
-    text-align: center;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);    
-}
 
-.tarjeta-inicio h1 span {
-    color: #42929D;
-}
 
-.tarjeta-inicio p {
-    font-family: "Montserrat Alternates", serif;
-    font-size: 1.6rem;
-    text-align: center;
-}
 
 .boton {
-    background: #E08E79;
-    font-family: "Montserrat Alternates", serif;
+    background: #002f6d;
+    font-family: "Harabara Mais Demo", sans-serif;
     font-size: 1.2rem;
     color: white;
     display: block;    
@@ -137,7 +113,7 @@ nav {
 }
 
 .boton:hover {
-    background: #42929D;
+    background: #fff159;
 }
 
 a.boton {
@@ -168,7 +144,7 @@ a.boton {
 .carrusel img{
     object-fit: cover;
     height: 100%;
-    width: 20%;
+    width: 60%;
 }
 
 .contenedor-nav-img {
@@ -213,7 +189,7 @@ a.boton {
 }
 
 .categoria-tarjeta {
-    background: #ECE5CE;
+    background: #dcdcdc;
     width: 300px;    
     margin: 8rem auto 2rem auto;
     padding: 2rem;
@@ -226,9 +202,9 @@ a.boton {
 }
 
 .categoria-titulo {
-    font-family: "Patua One", serif;
+    font-family: "Harabara Mais Demo", sans-serif;
     text-align: center;
-    color: #774F38;
+    color: #002f6d;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-size: 2rem;
     padding: 0.8rem;
@@ -244,13 +220,13 @@ a.boton {
 }
 
 .categoria-tarjeta h2 {
-    color: #42929D;
-    font-family: "Patua One", serif;
+    color: #002f6d;
+    font-family: "Harabara Mais Demo", sans-serif;
     padding: 10vh 0 2vh 0; 
 }
 
 .categoria-tarjeta p {
-    font-family: "Montserrat Alternates", serif;
+    font-family: "Harabara Mais Demo", sans-serif;
     padding: 2vh 0 2vh 0; 
 }
 
@@ -274,49 +250,7 @@ a.boton {
 /* ------------- FIN SECCIÓN CATEGORIAS ----------------- */
 
 
-/* ------------- SECCIÓN DIRECCION ----------------- */
 
-.seccion-direccion {
-    background: #ECE5CE;
-    padding: 10vh 0 10vh 0;
-}
-
-.direccion-tarjeta {
-    font-family: "Montserrat Alternates", serif;
-    width: 90%;
-    margin: auto;
-    background: #F4F4E1;
-    border: 5px solid #FFFFFF;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; 
-}
-
-.imagen-div {
-    flex: 1 1 300px;
-}
-
-.direccion-tarjeta img {
-    width: 90%;
-    display: block;
-    margin: auto;    
-}
-
-.direccion-datos {
-    flex: 1 1 300px;
-    color: #774F38;
-    padding: 2vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.direccion-datos h3, .direccion-datos p{
-    text-align: center;    
-}
-
-
-/* ------------- FIN SECCIÓN DIRECCION ----------------- */
 
 
 /* ------------- PIE DE PÁGINA ----------------- */
