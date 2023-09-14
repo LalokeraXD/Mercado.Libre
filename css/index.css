@@ -10,65 +10,89 @@ html {
 
 /* ------------- CARRITO DE COMPRAS ----------------- */
 .carrito-boton {
-    width: 40px;
-    background: #42929D;
+    width: 50px;
+    background: #3483faff;
     border: 3px solid white;
-    border-radius: 50%;
+    border-radius: 30%;
     position: fixed;
-    top: 8%;
-    left: 5%;
+    bottom: 8%;
+    right: 5%;
     z-index: 15;
     box-shadow: 0 0 5px gray;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background 0.3s, width 0.3s, bottom 0.3s, right 0.3s;
 }
 
 .carrito-boton:hover {
-    background: #E08E79;
+    background: rgb(8, 104, 247);
+    width: 60px;
+    bottom: 7.2%;
+    right: 4.6%;
 }
 
-.carrito-fondo {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 12;
-    background: rgba(255, 255, 255, 0.8);
-    display: grid;
-    place-items: center;
-    visibility: hidden;
+.contenedor-carrito {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #edededff;
+}
+
+.titulo {
+    color: #3483faff;
+    font-family: "Patua One", serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 35px;
 }
 
 .carrito-ventana {
-    width: 400px;
-    background: #42929D;
-    border: 5px solid #21575e;
+    width: 80%;
+    background: #ffff;
+    border-radius: 5px;
+    border: 5px solid white;
+    box-shadow: 0 0 5px #000000;
     padding: 10px;
+    margin-bottom: 30px;
 }
 
-.carrito-ventana .titulo {
-    color: white;
+.carrito-ventana .encabezado-detalle{
+    color: black;
     font-family: "Patua One", serif;
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.carrito-ventana .encabezado-detalle,
-.carrito-ventana .total {
-    color: white;
-    font-family: "Balsamiq Sans", sans-serif;
+    font-size: 24px;
     display: grid;
-    grid-template-columns: 3fr 1fr 1fr;
-    border-bottom: 1px solid white;
+    grid-template-columns: 63% 37%;
+    border-bottom: 2px solid black;
     margin-bottom: 10px;
     text-transform: uppercase;
+    padding-bottom: 10px;
 }
 
 .carrito-ventana .total {
+    color: black;
+    font-family: "Patua One", serif;
+    font-size: 24px;
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    padding-top: 10px;
+    text-transform: uppercase;
     border-bottom: none;
-    border-top: 1px solid white;
+    border-top: 2px solid black;
+}
+
+.productos {
+    min-height: 120px;
+}
+
+.carrito-vacio {
+    display: none;
+    font-family: "Patua One", serif;
+    text-align: center; 
+    align-items: center;
+    margin-top: 100px;
+    color: rgb(156, 156, 156);
 }
 
 .renglon .precio,
@@ -76,40 +100,107 @@ html {
     text-align: right;
 }
 
-.encabezado-detalle .columna-precio {
-    text-align: center;
+.imagen-carrito {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.postre, .precio{
+    padding-left: 10px;
+    font-size: 20px;
 }
 
 .productos .renglon {
-    color: white;
+    color: black;
     font-family: "Balsamiq Sans", sans-serif;
     display: grid;
-    grid-template-columns: 3fr 1fr 1fr;
+    grid-template-columns: 20% 30% 20% 30%;
     margin-bottom: 10px;
+    align-items: center;
 }
 
-.carrito-ventana .renglon .boton-quitar {
-    color: #42929D;
-    font-family: "Balsamiq Sans", sans-serif;
-    background: #F4F4E1;
-    border: none;
-    cursor: pointer;
-    transition: background 0.5s;
+.contenedor-prod-boton {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.contenedor-prod-boton>p {
+    margin-top: 10px;
     margin-left: 5px;
 }
 
+.contenedor-cantidad {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 13px;
+}
+
+.cantidad {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px black;
+}
+
+.cantidad p {
+    padding: 10px 15px;
+    text-align: center;
+    cursor: pointer;
+    height: 100%;
+}
+
+.cantidad p:hover {
+    background: #d3d3d3;
+}
+
+.disminuir, .num-cant {
+    text-align: center;
+    line-height: 2rem;
+}
+
+.disminuir{
+    color: red;
+} 
+
+.aumentar {
+    color: #3483faff;
+    font-size: 24px;
+}
+
+.carrito-ventana .renglon .boton-quitar {
+    color: #3483faff;
+    font-family: "Balsamiq Sans", sans-serif;
+    font-weight: bold;
+    background: #ffffff;
+    border: none;
+    text-align: left;
+    margin-top: 5px;
+    margin-left: 15px;
+    cursor: pointer;
+    transition: color 0.2s;
+    width: 60px;
+}
+
 .carrito-ventana .renglon .boton-quitar:hover {
-    background: #E08E79;
-    color: white;
+    color: red;
 }
 
 .carrito-ventana .boton-compra {
     width: 100%;
+    color: #fff;
+    background: #3483faff;
 }
 
 .carrito-ventana .boton-compra:hover {
-    background: #F4F4E1;
-    color: #42929D;
+    background: rgb(8, 104, 247);
+    color: white;
 }
 
 /* ------------- MENÚ INICIAL ----------------- */

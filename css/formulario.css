@@ -21,8 +21,8 @@
     justify-content: space-around;
 }
 
-input[type=text], input[type=password], input[type=number], input[type=file], textarea, select {
-    font-family: "Montserrat Alternates", serif;
+input[type=text], input[type=password], input[type=email], input[type=number], input[type=file], textarea, select {
+    font-family: "Montserrat Alternates", sans-serif;
     font-size: 2rem;
     margin: 0.5rem 0 0.5rem 0;
 }
