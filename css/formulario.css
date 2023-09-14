@@ -13,7 +13,7 @@
     background: #f4f4e1;
     border: 5px solid white;
     padding: 3%;
-    font-family: "Harabara Mais Demo", sans-serif;
+    font-family: "Montserrat Alternates", sans-serif;
     font-size: 2rem;
     box-shadow: 0 4px 4px rgb(0, 0, 0.25);
     display: flex;
@@ -22,7 +22,7 @@
 }
 
 input[type=text], input[type=password], input[type=email], input[type=number], input[type=file], textarea, select {
-    font-family: "Harabara Mais Demo", sans-serif;
+    font-family: "Montserrat Alternates", sans-serif;
     font-size: 2rem;
     margin: 0.5rem 0 0.5rem 0;
 }

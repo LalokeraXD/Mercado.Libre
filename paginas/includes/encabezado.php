@@ -19,35 +19,8 @@
 </head>
 <body>
 
-    <img src="../imagenes/cart.png" alt="" class="carrito-boton">
-    <div class="carrito-fondo">
-        <div class="carrito-ventana">
-            <p class="titulo">Carrito de Compras</p>
-            <div class="encabezado-detalle">
-                <p class="columna-producto">Producto</p>
-                <p class="columna-precio">Precio</p>
-            </div>
-
-            <div class="productos">
-                <div class="renglon">
-                    <img src="../imagenes/pastel.png" class="imagen-carrito">
-                    <p class="postre">Pastel de Chocolate</p>
-                    <p class="precio">$420.00</p>
-                    <button class="boton-quitar">Quitar</button>
-                </div>
-            </div>
-
-            <div class="total">
-                <p>Total</p>
-                <p class="precio-total">$420.00</p>
-            </div>
-
-            <button class="boton boton-compra">Realizar Compra</button>
-
-        </div>
-    </div>
-
-
+    <a href="carrito.php"><img src="../imagenes/cart.png" alt="" class="carrito-boton"></a>
+    
     <!-- Navegación del la página -->
     <div class="nav-contenedor">
         <nav>
