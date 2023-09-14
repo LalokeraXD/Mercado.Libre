@@ -1,7 +1,35 @@
 <?php
 include('includes/encabezado.php');
 include('includes/utilerias.php');
+
 $usuario = 1;
+//Botones de aumentar y disminuir
+if (!empty($_POST['aumentar']) || !empty($_POST['disminuir'])) {
+    $conexion = conectar();
+    if (!$conexion) {
+        redireccionar('Error en la conexión.', $paginaError);
+        return;
+    }
+    if (isset($_POST['cantidad']) && is_numeric($_POST['cantidad'])) {
+        $cantidad = $_POST['cantidad'];
+
+        if (!empty($_POST['disminuir']) && $cantidad != 0) {
+            $idPro = $_POST['disminuir'];
+            $sql = "UPDATE carrito SET cantidadProductoCarrito = cantidadProductoCarrito - 1 WHERE idProducto = $idPro";
+            $resultado = mysqli_query($conexion, $sql);
+        } else if (!empty($_POST['aumentar'])) {
+            $idPro = $_POST['aumentar'];
+            $sql = "UPDATE carrito SET cantidadProductoCarrito = cantidadProductoCarrito + 1 WHERE idProducto = $idPro";
+            $resultado = mysqli_query($conexion, $sql);
+        }
+
+    } else {
+        // Manejar el caso en el que 'cantidad' no está definido o no es numérico
+        echo "Error: Cantidad no válida";
+    }
+    mysqli_close($conexion);
+    header("Location: " . $_SERVER['REQUEST_URI']);
+}
 ?>
 
 <div class="contenedor-carrito">
@@ -15,12 +43,12 @@ $usuario = 1;
             <p class="carrito-vacio">No hay ningún producto en el carrito.</p>
             <?php
             $conexion = conectar();
-            
+
             ver_carrito($usuario, $conexion);
 
             mysqli_close($conexion);
             ?>
-            
+
         </div>
 
         <div class="total">
@@ -35,7 +63,7 @@ $usuario = 1;
 
 <?php
 
-function ver_carrito($usuario,$conexion)
+function ver_carrito($usuario, $conexion)
 {
     $sql = "select * from carrito c inner join productos p on p.idProducto = c.idProducto where idUsuario = $usuario";
 
@@ -44,6 +72,7 @@ function ver_carrito($usuario,$conexion)
     echo "<div class='renglon'>";
     if (mysqli_num_rows($resultado) > 0) {
         while ($renglon = mysqli_fetch_assoc($resultado)) {
+            $idProducto = $renglon['idProducto'];
             $nombreProducto = $renglon['nombreProducto'];
             $precioProducto = $renglon['precioProducto'];
             $imagenProducto = $renglon['imagenProducto'];
@@ -59,12 +88,23 @@ function ver_carrito($usuario,$conexion)
                 <p class='precio'>$$precioProducto</p>
                 <div class='contenedor-cantidad'>
                     <div class='cantidad'>
-                        <p class='disminuir'>—</p>
+                        
+                        <form action='' method='post'>
+                            <input type='hidden' name='disminuir' value='$idProducto'>
+                            <input type='hidden' name='cantidad' value='$cantidadProducto'>
+                            <input type='submit' class='disminuir' value='—'>
+                        </form>
                         <p class='num-cant' id='editable' contenteditable='true'>$cantidadProducto</p>
-                        <p class='aumentar'>+</p>
+
+                        <form action='' method='post'>
+                            <input type='hidden' name='aumentar' value='$idProducto'>
+                            <input type='hidden' name='cantidad' value='$cantidadProducto'>
+                            <input type='submit' class='aumentar' value='+'>
+                        </form>
                     </div>
                 </div>
             </div>";
+
         }
     }
 }

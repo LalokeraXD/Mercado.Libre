@@ -8,18 +8,18 @@ if (empty($_POST)) {
 
 $paginaError = 'verpostres.php';
 
+$conexion = conectar();
+if (!$conexion) {
+    redireccionar('Error en la conexión.', $paginaError);
+    return;
+}
+
 $idProducto = validar($_POST['idProducto']);
 $idUsuario = validar($_POST['idUsuario']);
 
 
 if ($idUsuario == '' || $idProducto == '') {
     redireccionar('Información no válida.', $paginaError);
-    return;
-}
-
-$conexion = conectar();
-if (!$conexion) {
-    redireccionar('Error en la conexión.', $paginaError);
     return;
 }
 //Verificar si ya existe
