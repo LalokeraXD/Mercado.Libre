@@ -10,10 +10,8 @@ if (session_status() == PHP_SESSION_NONE) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Respostería Dulce Vida</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&family=Pacifico&family=Patua+One&display=swap"
-        rel="stylesheet">
+    <title>Mercado Libre</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&family=Pacifico&family=Patua+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/formulario.css">
     <link rel="stylesheet" href="../css/verpostres.css">
@@ -80,8 +78,7 @@ if (session_status() == PHP_SESSION_NONE) {
     <div class="nav-contenedor">
         <nav>
             <div class="logo">
-                <img src="../imagenes/cake.png" alt="">
-                <h2>Dulce Vida</h2>
+                <img src="../imagenes/logo.png" alt="">
             </div>
             <h2 id="menu-boton">&#9776;</h2>
             <ul id="menu">

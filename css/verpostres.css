@@ -1,10 +1,14 @@
-.verpostres {
-    background: #f4f4e1;
+.verproducto {
+    background: #ebebeb;
     padding: 3% 5% 3% 5%;
 }
 
+body{
+    background-color: #ebebeb;
+}
+
 .separador {
-    background: #42929d;
+    background: #002f6d;
     color: white;
     padding: 20px;
     font-family: "Patua One", serif;
@@ -16,6 +20,8 @@
 }
 
 .contenedor {
+    background: #ebebeb;
+    padding-top: 50px;
     display: grid;
     grid-template-columns: repeat(auto-fit, 350px);
     justify-content: space-around;
@@ -23,8 +29,8 @@
 }
 
 .producto-tarjeta {
-    background: #ece5ce;
-    border: 5px solid white;
+    background: white;
+    border: 5px solid #ffe103;
     padding: 10px;
     transition: box-shadow 0.5s;
 }
@@ -33,28 +39,33 @@
     box-shadow: 0 5px 10px gray;
 }
 
-.producto-tarjeta .nombre {
+.producto-tarjeta .nombreProducto {
     font-family: "Patua One", serif;
-    color: #42929d;
+    color: #002f6d;
 }
 
-.producto-tarjeta .precio {
+.producto-tarjeta .precioProducto {
     font-family: "Patua One", serif;
 }
 
-.producto-tarjeta .imagen {
+.producto-tarjeta .imagenProducto {
     width: 100%;
-    height: 150px;
-    object-fit: cover;
+    height: 300px;
+    object-fit:fill;
 }
 
-.producto-tarjeta .descripcion {
+.producto-tarjeta .descripcionProducto {
     font-family: "Balsamiq Sans", sans-serif;
     text-align: justify;
 }
 
-.producto-tarjeta .nombre, .producto-tarjeta .precio,
-.producto-tarjeta .imagen, .producto-tarjeta .descripcion {
+.producto-tarjeta .stock {
+    font-family: "Balsamiq Sans", sans-serif;
+    text-align: justify;
+}
+
+.producto-tarjeta .nombreProducto, .producto-tarjeta .precioProducto, .stock,
+.producto-tarjeta .imagenProducto, .producto-tarjeta .descripcionProducto {
     margin-bottom: 1rem;
 }
 

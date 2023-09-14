@@ -3,14 +3,18 @@
     include('includes/utilerias.php');
 ?>
 
-<div class="verpostres">
+<div class="verproductos">
 
 <?php
     $conexion = conectar();
 
-    ver_postres('pastel', $conexion);
-    ver_postres('mostachón', $conexion);
-    ver_postres('pay', $conexion);
+    ver_productos('Alimentos y bebidas',$conexion);
+    ver_productos('Animales y mascotas',$conexion);
+    ver_productos('Belleza y Cuidado',$conexion);
+    ver_productos('Telefonía',$conexion);
+    ver_productos('Videojuegos',$conexion);
+    ver_productos('Calzado',$conexion);
+    ver_productos('Hogar',$conexion);
 
     mysqli_close($conexion);
 ?>
@@ -19,28 +23,30 @@
 
 <?php
 
-function ver_postres($postre, $conexion){
-    echo "<h1 class='separador' id='$postre'>$postre</h1>";
-    echo "<div class='contenedor'>";
+function ver_productos($categoria,$conexion){
+    $sql = "select P.* from productos P join categorias C on P.idCategoria = C.idCategoria where C.nombreCategoria = '$categoria'";
 
-    $sql = "select * from postre where tipo='$postre'";
     $resultado = mysqli_query($conexion, $sql);
 
+    echo "<h1 class='separador' id='$categoria'>$categoria</h1>";
+    echo "<div class='contenedor'>";
     if(mysqli_num_rows($resultado) > 0){
         while($renglon = mysqli_fetch_assoc($resultado)){
-            $postre = $renglon['postre'];
-            $precio = $renglon['precio'];
-            $descripcion = $renglon['descripcion'];
-            $imagen = $renglon['imagen'];
+            $nombreProducto = $renglon['nombreProducto'];
+            $descripcionProducto = $renglon['descripcionProducto'];
+            $stock = $renglon['stock'];
+            $precioProducto = $renglon['precioProducto'];
+            $imagenProducto = $renglon['imagenProducto'];
 
-            echo "<div class='producto-tarjeta'>
-                <h2 class='nombre'>$postre</h2>
-                <h3 class='precio'>$precio</h3>
-                <img src='$imagen' alt='' class='imagen'>
-                <p class='descripcion'>$descripcion</p>
+            echo "
+                <div class='producto-tarjeta'>
+                <h1 class='nombreProducto'>$nombreProducto</h1>
+                <h2 class='stock'>Existencias: $stock</h2>
+                <h2 class='precioProducto'>$$precioProducto</h2>
+                <img src='$imagenProducto' alt='' class='imagenProducto'>
+                <h2 class='descripcionProducto'>$descripcionProducto</h2>
                 <button class='boton max'>Agregar al Carrito</button>
                 </div>";
-
         }
     }
 
