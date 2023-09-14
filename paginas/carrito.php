@@ -2,7 +2,10 @@
 include('includes/encabezado.php');
 include('includes/utilerias.php');
 
-$usuario = 1;
+$usuario = 0;
+if (isset($_SESSION['idUsuario'])) {
+    # code...
+}
 //Botones de aumentar y disminuir
 if (!empty($_POST['aumentar']) || !empty($_POST['disminuir'])) {
     $conexion = conectar();
@@ -15,11 +18,15 @@ if (!empty($_POST['aumentar']) || !empty($_POST['disminuir'])) {
 
         if (!empty($_POST['disminuir']) && $cantidad != 0) {
             $idPro = $_POST['disminuir'];
-            $sql = "UPDATE carrito SET cantidadProductoCarrito = cantidadProductoCarrito - 1 WHERE idProducto = $idPro";
+            $sql = "UPDATE carrito SET cantidadProductoCarrito = cantidadProductoCarrito - 1 WHERE idProducto = $idPro AND idUsuario = $usuario";
             $resultado = mysqli_query($conexion, $sql);
+            if ($cantidad==1) {
+                $sql = "DELETE FROM carrito WHERE idProducto = $idPro AND idUsuario = $usuario";
+                $resultado = mysqli_query($conexion, $sql);
+            }
         } else if (!empty($_POST['aumentar'])) {
             $idPro = $_POST['aumentar'];
-            $sql = "UPDATE carrito SET cantidadProductoCarrito = cantidadProductoCarrito + 1 WHERE idProducto = $idPro";
+            $sql = "UPDATE carrito SET cantidadProductoCarrito = cantidadProductoCarrito + 1 WHERE idProducto = $idPro AND idUsuario = $usuario";
             $resultado = mysqli_query($conexion, $sql);
         }
 
