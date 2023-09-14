@@ -5,7 +5,9 @@
 
 <div class="contenido">
 <aside>
-    <div class="categorias"></div> 
+    <div class="categorias">
+        <h2 class="titulo">CATEGORIAS</h2>
+    </div> 
 </aside>
 
 <div class="verproductos">
@@ -36,8 +38,7 @@
         $sql = "select c.nombreCategoria, p.nombreProducto, p.descripcionProducto,
             p.stock, p.precioProducto, p.imagenProducto
         from productos p inner join categorias c on p.idCategoria = c.idCategoria";
-        //$cat = "select categorias.nombreCategoria from productos inner join categorias on productos.idCategoria = categorias.idCategoria";
-
+        
         $resultado = mysqli_query($conexion, $sql);
 
         echo "<div class='contenedor'>";
@@ -92,9 +93,6 @@
         checkboxes.forEach(function(checkbox) {
             if (checkbox.checked) {
                 checked.push(checkbox.getAttribute('data-nombre'));
-            }
-            else {
-                noChecked.push(checkbox.getAttribute('data-nombre'));
             }
         });
         mostrarCategorias(checked);
