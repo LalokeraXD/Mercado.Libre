@@ -64,6 +64,8 @@
             }
         }
             echo "</div>";
+
+        
             
     }
 ?>
@@ -79,13 +81,13 @@
         const categoriaDiv = document.createElement('div');
         categoriaDiv.classList.add('categoria');
         categoriaDiv.innerHTML = 
-        `<input type="checkbox" class="checkbox" checked checked data-nombre="${categoria.nombreCategoria}">${categoria.nombreCategoria}`
+        `<label><input type="radio" class="checkbox" name="ckech" style="opacity: 0;" data-nombre="${categoria.nombreCategoria}">${categoria.nombreCategoria} </label>`
         categoriasDiv.appendChild(categoriaDiv);
     });
 
     const checkboxes = document.querySelectorAll('.checkbox');
-    let checked = categorias.map(categoria => categoria.nombreCategoria);
-    console.log(checked);
+ /*    let checked = categorias.map(categoria => categoria.nombreCategoria);
+    console.log(checked); */
     // Función para manejar el cambio de estado de los checkboxes
     function handleCheckboxChange() {
         checked = [];
@@ -93,6 +95,14 @@
         checkboxes.forEach(function(checkbox) {
             if (checkbox.checked) {
                 checked.push(checkbox.getAttribute('data-nombre'));
+                let label = checkbox.labels[0]; // Suponemos que hay una sola etiqueta asociada
+                label.style.fontWeight = "bold";
+                label.style.textDecoration = "underline"; 
+            } else {
+                noChecked.push(checkbox.getAttribute('data-nombre'));
+                let label = checkbox.labels[0]; // Suponemos que hay una sola etiqueta asociada
+                label.style.fontWeight = "normal";
+                label.style.textDecoration = "none"; 
             }
         });
         mostrarCategorias(checked);
