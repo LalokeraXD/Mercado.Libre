@@ -142,7 +142,7 @@ nav {
 }
 
 .logo h2 {
-    font-family: "Pacifico", serif;
+    font-family: "Harabara Mais Demo", sans-serif;
     color: white;
 }
 
@@ -158,9 +158,9 @@ nav {
 }
 
 #menu { 
-    font-family: "Montserrat Alternates", serif;
+    font-family: "Harabara Mais Demo", sans-serif;
     list-style: none;    
-    text-transform: uppercase;
+    text-transform: lowercase;
     display: flex;
     flex-direction: row;
 }
@@ -228,7 +228,7 @@ nav {
 
 .boton {
     background: #002f6d;
-    font-family: "Montserrat Alternates", serif;
+    font-family: "Harabara Mais Demo", sans-serif;
     font-size: 1.2rem;
     color: white;
     display: block;    
@@ -425,7 +425,7 @@ a.boton {
 footer {
     background: #fff159;
     color: black;
-    font-family: "Montserrat Alternates", serif;
+    font-family: "Montserrat Alternates", sans-serif;
     font-size: 1rem;
 }
 

@@ -13,15 +13,15 @@
 
 <div class="formulario-div">
     <form action="entrar-manejo.php" method="post">
-        <h3>Acceder</h3>
+        <h3>Identificate</h3>
 
-        <label for="usuario">Usuario o Email</label>
+        <label for="usuario">email</label>
         <input type="text" name="usuario" id="usuario">
         
-        <label for="password">Contraseña</label>
+        <label for="password">passsword</label>
         <input type="password" name="password" id="password">
 
-        <input type="submit" value="Iniciar Sesión" class="boton">
+        <input type="submit" value="Iniciar Sesion" class="boton">
     </form>
 </div>
 

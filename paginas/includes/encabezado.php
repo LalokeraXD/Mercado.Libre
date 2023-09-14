@@ -72,10 +72,10 @@
                 <?php
                     if(isset($_SESSION['usuario'])) {
                         echo '<li><a href="salir.php">Salir</a></li>';
-                        echo '<li><a href="agregar.php">Agregar postre</a></li>';
+                        echo '<li><a href="agregar.php">Carrito</a></li>';
                     } else {
-                        echo '<li><a href="entrar.php">Iniciar Sesión</a></li>';
-                        echo '<li><a href="registro.php">Crear cuenta</a></li>';
+                        echo '<li><a href="entrar.php">Iniciar Sesion</a></li>';
+                        echo '<li><a href="registro.php">Registrarse</a></li>';
                     }
                 ?>
 
