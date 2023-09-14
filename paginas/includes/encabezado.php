@@ -62,7 +62,6 @@
         <nav>
             <div class="logo">
                 <img src="../imagenes/logo.png" alt="">
-                <h2>Mercado libre</h2>
             </div>
             <h2 id="menu-boton">&#9776;</h2>
             <ul id="menu">
