@@ -1,6 +1,7 @@
 <?php
 include('includes/encabezado.php');
 include('includes/utilerias.php');
+$usuario = 1;
 ?>
 
 <div class="contenedor-carrito">
@@ -14,26 +15,11 @@ include('includes/utilerias.php');
             <p class="carrito-vacio">No hay ningún producto en el carrito.</p>
             <?php
             $conexion = conectar();
-            ver_carrito(1, $conexion);
+            
+            ver_carrito($usuario, $conexion);
 
             mysqli_close($conexion);
             ?>
-            <!-- <div class="renglon">
-                <img class="imagen-carrito" src="../imagenes/pastel.png">
-                <div class="contenedor-prod-boton">
-                    <p class="postre">Pastel</p>
-                    <button class="boton-quitar">Eliminar</button>
-                </div>
-                <p class="precio">$450.00</p>
-                <div class="contenedor-cantidad">
-                    <div class="cantidad">
-                        <p class="disminuir">—</p>
-                        <p class="num-cant" id="editable" contenteditable="true">1</p>
-                        <p class="aumentar">+</p>
-                    </div>
-                </div>
-            </div>
-             -->
             
         </div>
 
@@ -62,6 +48,7 @@ function ver_carrito($usuario,$conexion)
             $precioProducto = $renglon['precioProducto'];
             $imagenProducto = $renglon['imagenProducto'];
             $cantidadProducto = $renglon['cantidadProductoCarrito'];
+            $precioProducto = $precioProducto * $cantidadProducto;
 
             echo "
             <img class='imagen-carrito' src='$imagenProducto'>
