@@ -1,4 +1,4 @@
-.verpostres {
+.verproducto {
     background: #f4f4e1;
     padding: 3% 5% 3% 5%;
 }
@@ -16,6 +16,7 @@
 }
 
 .contenedor {
+    padding-top: 50px;
     display: grid;
     grid-template-columns: repeat(auto-fit, 350px);
     justify-content: space-around;
@@ -33,12 +34,12 @@
     box-shadow: 0 5px 10px gray;
 }
 
-.producto-tarjeta .nombre {
+.producto-tarjeta .nombreProducto {
     font-family: "Patua One", serif;
-    color: #42929d;
+    color: #eed130;
 }
 
-.producto-tarjeta .precio {
+.producto-tarjeta .precioProducto {
     font-family: "Patua One", serif;
 }
 
@@ -48,13 +49,18 @@
     object-fit: cover;
 }
 
-.producto-tarjeta .descripcion {
+.producto-tarjeta .descripcionProducto {
     font-family: "Balsamiq Sans", sans-serif;
     text-align: justify;
 }
 
-.producto-tarjeta .nombre, .producto-tarjeta .precio,
-.producto-tarjeta .imagen, .producto-tarjeta .descripcion {
+.producto-tarjeta .stock {
+    font-family: "Balsamiq Sans", sans-serif;
+    text-align: justify;
+}
+
+.producto-tarjeta .nombreProducto, .producto-tarjeta .precioProducto, .stock,
+.producto-tarjeta .imagen, .producto-tarjeta .descripcionProducto {
     margin-bottom: 1rem;
 }
 
