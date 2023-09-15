@@ -10,9 +10,11 @@
     $year = $_POST['year'];
     $cvv = $_POST['seguridad'];
 
+    $tarjetaSinEspacios = preg_replace('/\s+/', '', $numTarjeta);
+
 	$conexion = conectar();
 
-    $sql = "UPDATE usuarios SET tarjetaUsuario = '$numTarjeta' WHERE idUsuario = '$usuario'";
+    $sql = "UPDATE usuarios SET tarjetaUsuario = '$tarjetaSinEspacios' WHERE idUsuario = '$usuario'";
 
     $resultado = mysqli_query($conexion, $sql);
 
