@@ -30,6 +30,7 @@ if (!empty($_POST['aumentar']) || !empty($_POST['disminuir'])) {
                 $resultado = mysqli_query($conexion, $sql);
             }
         } else if (!empty($_POST['aumentar'])) {
+            
             $idPro = $_POST['aumentar'];
             $sql = "UPDATE carrito SET cantidadProductoCarrito = cantidadProductoCarrito + 1 WHERE idProducto = $idPro AND idUsuario = $usuario";
             $resultado = mysqli_query($conexion, $sql);

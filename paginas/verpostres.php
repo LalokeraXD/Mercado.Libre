@@ -62,10 +62,15 @@ function ver_productos($categoria, $conexion)
                 echo "
                 <form action='agregar-carrito.php' method='post'>
                     <input type='hidden' value='$idProducto' name='idProducto'>
-                    <input type='hidden' value='$idUsuario' name='idUsuario'>
-                    <input type='submit' class='boton max' value='Agregar al carrito'>
+                    <input type='hidden' value='$idUsuario' name='idUsuario'>";
+
+                if (!stock($idProducto, $conexion))
+                    echo "<input type='submit' class='boton max' value='No hay existencias' disabled>";
+                else
+                    echo "<input type='submit' class='boton max' value='Agregar al carrito'>";
+                echo "
                 </form>";
-            }else {
+            } else {
                 echo "<a href='entrar.php' class='boton max'>Agregar al carrito</a>";
             }
 
