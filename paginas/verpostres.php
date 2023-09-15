@@ -1,6 +1,6 @@
 <?php
-    include('includes/encabezado.php');
-    include('includes/utilerias.php');
+include('includes/encabezado.php');
+include('includes/utilerias.php');
 ?>
 
 <div class="contenido">
@@ -56,7 +56,7 @@
                     <h1 class='nombreProducto'>$nombreProducto</h1>
                     <h2 class='stock'>Existencias: $stock</h2>
                     <h2 class='precioProducto'>$$precioProducto</h2>
-                    <img src='$imagen' alt='' class='imagen'>
+                    <img src='$imagen' alt='' class='imagenProducto'>
                     <h2 class='descripcionProducto'>$descripcionProducto</h2>
                     <h2 class='categoriaProducto'>$categoriaProducto</h2>
                     <button class='boton max'>Agregar al Carrito</button>

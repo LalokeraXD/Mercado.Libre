@@ -1,18 +1,41 @@
 
 const carritoBoton = document.querySelector('.carrito-boton');
 const carritoFondo = document.querySelector('.carrito-fondo');
-let carritoVisible = false;
+//let carritoVisible = false;
 
-carritoBoton.addEventListener('click', () => {
-    carritoVisible = !carritoVisible;
+// carritoBoton.addEventListener('click', () => {
+//     carritoVisible = !carritoVisible;
 
-    if(carritoVisible){
-        carritoFondo.style.visibility = "visible";
-    } else {
-        carritoFondo.style.visibility = "hidden";
+//     if(carritoVisible){
+//         carritoFondo.style.visibility = "visible";
+//         actualizarTotal();
+//     } else {
+//         carritoFondo.style.visibility = "hidden";
+//     }
+// });
+// document.addEventListener('DOMContentLoaded', function () {
+//     if (carritoFondo) {
+//         carritoFondo.addEventListener('click', (event) => {
+//             if (event.target === carritoFondo) {
+//                 carritoVisible = false;
+//                 carritoFondo.style.visibility = "hidden";
+//             }
+//             console.log(event.target);
+//         });
+//     }
+// });
+
+
+function contarRenglones() {
+    const productos = document.querySelector('.productos');
+    const renglones = productos.querySelectorAll('.renglon');
+    
+    if (renglones.length === 0) {
+        const noProductos = document.querySelector('.carrito-vacio');
+        noProductos.style.display = 'block';
     }
-});
-
+}
+    
 ///////////////////BOTONES QUITAR////////////////////////////////
 
 const botonesQuitar = document.getElementsByClassName('boton-quitar');
@@ -22,8 +45,9 @@ Array.from(botonesQuitar).forEach(boton => {
 });
 
 function removerProducto(evento) {
-    evento.target.parentElement.remove();
+    // evento.target.parentElement.remove();
     actualizarTotal();
+    contarRenglones();
 }
 
 ////////////////////ACTUALIZAR TOTAL////////////////////////////////
@@ -42,41 +66,79 @@ function actualizarTotal(){
 }
 
 actualizarTotal();
-
+contarRenglones();
 
 /////////////////////////BOTONES AGREGAR POSTRE////////////////////////////
-const botonesAgregar = document.querySelectorAll('.producto-tarjeta .boton');
+// const botonesAgregar = document.querySelectorAll('.producto-tarjeta .boton');
 
-Array.from(botonesAgregar).forEach(boton => {
+// Array.from(botonesAgregar).forEach(boton => {
     
-    boton.addEventListener('click', evento => {
-        let nombre = evento.target.parentElement.querySelector('.nombre');
-        let precio = evento.target.parentElement.querySelector('.precio');
+//     boton.addEventListener('click', evento => {
+//         let nombre = evento.target.parentElement.querySelector('.nombre');
+//         let precio = evento.target.parentElement.querySelector('.precio');
     
-        agregarAlCarrito(nombre.innerHTML, precio.innerHTML);
+//         agregarAlCarrito(nombre.innerHTML, precio.innerHTML);
+    // boton.addEventListener('click', evento => {
+    //     let nombre = evento.target.parentElement.querySelector('.nombre');
+    //     let precio = evento.target.parentElement.querySelector('.precio');
+    //     let imagen = evento.target.parentElement.querySelector('.imagen').src;
+    
+    //     agregarAlCarrito(nombre.innerHTML, precio.innerHTML, imagen);
         
-    });
+//     });
     
-});
+// });
 
-function agregarAlCarrito(nombre, precio){
+// function agregarAlCarrito(nombre, precio){
+// function agregarAlCarrito(nombre, precio, imagen){
     
-    const productos = document.querySelector('.productos');
-    let renglon = document.createElement('div');
+// //     const productos = document.querySelector('.productos');
+// //     let renglon = document.createElement('div');
 
-    renglon.classList.add('renglon');
-    renglon.innerHTML = `<p class="postre">${nombre}</p>
-                         <p class="precio">$${precio}</p>
-                         <button class="boton-quitar">Quitar</button>`
+// //     renglon.classList.add('renglon');
+// //     renglon.innerHTML = `<p class="postre">${nombre}</p>
+// //                          <p class="precio">$${precio}</p>
+// //                          <button class="boton-quitar">Quitar</button>`
+//     renglon.classList.add('renglon');
+//     renglon.innerHTML = `<img class="imagen-carrito" src="${imagen}">
+//                          <div class="contenedor-prod-boton">
+//                             <p class="postre">${nombre}</p>
+//                             <button class="boton-quitar">Eliminar</button>
+//                          </div>
+//                          <p class="precio">$${precio}</p>
+//                          <div class="contenedor-cantidad">
+//                             <div class="cantidad">
+//                                 <p class="disminuir">—</p>
+//                                 <p class="num-cant" id="editable" contenteditable="true">1</p>
+//                                 <p class="aumentar">+</p>
+//                             </div>
+//                          </div>`
 
-    const boton = renglon.querySelector('.boton-quitar');
-    boton.addEventListener('click', removerProducto);
+//     const boton = renglon.querySelector('.boton-quitar');
+//     boton.addEventListener('click', removerProducto);
 
-    productos.append(renglon);
+//     productos.append(renglon);
 
-    alert('Producto agregado al carrito.');
+//     alert('Producto agregado al carrito.');
     
-}
+// }
 
+// const numCant = document.getElementById('editable');
 
+// numCant.addEventListener('click', () => {
+//     numCant.focus(); // Coloca el foco en el elemento editable al hacer clic
+// });
 
+// numCant.addEventListener('input', () => {
+//     let newValue = numCant.textContent;
+    
+//     // Validación para asegurarse de que el valor sea un número entero positivo
+//     const parsedValue = parseInt(newValue);
+    
+//     if (isNaN(parsedValue) || parsedValue <= 0) {
+//         newValue = '1'; // Establece el valor en 1 si no es válido
+//     }
+    
+//     numCant.textContent = newValue;
+    
+// });

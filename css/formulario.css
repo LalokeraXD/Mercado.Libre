@@ -1,6 +1,7 @@
 
 .formulario-div {
-    background-image: url(../imagenes/fondo.png);
+    /*background-image: url(../imagenes/fondo.png);*/
+    background-color: #ebebeb;
     min-height: 80vh;
     display: grid;
     place-items: center;
@@ -10,10 +11,10 @@
 .formulario-div form {
     width: 400px;
     min-height: 60vh;
-    background: #f4f4e1;
-    border: 5px solid white;
+    background: whitesmoke;
+    border: 5px solid #fff159;
     padding: 3%;
-    font-family: "Montserrat Alternates", sans-serif;
+    font-family: "Harabara Mais Demo", sans-serif;
     font-size: 2rem;
     box-shadow: 0 4px 4px rgb(0, 0, 0.25);
     display: flex;
@@ -21,19 +22,50 @@
     justify-content: space-around;
 }
 
-input[type=text], input[type=password], input[type=number], input[type=file], textarea, select {
-    font-family: "Montserrat Alternates", serif;
+.formulario-div2 {
+    /*background-image: url(../imagenes/fondo.png);*/
+    background-color: #ebebeb;
+    min-height: 80vh;
+    display: grid;
+    place-items: center;
+    padding: 30px;
+}
+
+.formulario-div2 form {
+    width: 600px;
+    min-height: 60vh;
+    background: whitesmoke;
+    border: 5px solid #fff159;
+    padding: 3%;
+    font-family: "Harabara Mais Demo", sans-serif;
+    font-size: 2rem;
+    box-shadow: 0 4px 4px rgb(0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.formulario-div2 h3 {
+    text-align: center;
+    color: #002f6d;
+    text-transform: uppercase;
+    border-bottom: 1px solid #002f6d;
+}
+
+
+input[type=number], input[type=file], textarea, select {
+    font-family: "Harabara Mais Demo", sans-serif;
     font-size: 2rem;
     margin: 0.5rem 0 0.5rem 0;
 }
 
 label {
-    color: #774f38;
+    color: #002f6d;
 }
 
 .formulario-div h3 {
     text-align: center;
-    color: #42929d;
+    color: #002f6d;
     text-transform: uppercase;
-    border-bottom: 1px solid #42929d;
+    border-bottom: 1px solid #002f6d;
 }
