@@ -120,7 +120,7 @@ function ver_carrito($usuario, $conexion)
                             <input type='hidden' name='cantidad' value='$cantidadProducto'>
                             <input type='submit' class='disminuir' value='—'>
                         </form>
-                        <p class='num-cant' id='editable' contenteditable='true'>$cantidadProducto</p>
+                        <p class='num-cant' id='editable' contenteditable='false'>$cantidadProducto</p>
 
                         <form action='' method='post'>
                             <input type='hidden' name='aumentar' value='$idProducto'>

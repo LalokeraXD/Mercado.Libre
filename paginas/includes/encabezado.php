@@ -29,11 +29,14 @@ if (session_status() == PHP_SESSION_NONE) {
     <!-- Navegación del la página -->
     <div class="nav-contenedor">
         <nav>
-            <div class="logo">
-                <img src="../imagenes/logo.png" alt="">
-            </div>
+
             <h2 id="menu-boton">&#9776;</h2>
             <ul id="menu">
+            <div class="logo">
+                        <img src="../imagenes/logo.png" alt="">
+                    </div>
+                
+                <div class="conjunto">
                 <?php
                 if (isset($_SESSION['nombre'])) {
                     $nombre = $_SESSION['nombre'];
@@ -42,19 +45,23 @@ if (session_status() == PHP_SESSION_NONE) {
                     echo '<li><p>¡Bienvenido! ' . $nombre . '</p></li>';
                 }
                 ?>
-                <li><a href="index.php">Inicio</a></li>
-                <li><a href="index.php#postres">Productos</a></li>
-                <!--<li><a href="index.php#direccion">Dirección</a></li> -->
+                    <div class="opciones">
+                        <li><a href="index.php">Inicio</a></li>
+                        <li><a href="index.php#postres">Productos</a></li>
+                        <!--<li><a href="index.php#direccion">Dirección</a></li> -->
 
-                <?php
-                if (isset($_SESSION['usuario'])) {
-                    echo '<li><a href="salir.php">Salir</a></li>';
-                    echo '<li><a href="agregar.php">Carrito</a></li>';
-                } else {
-                    echo '<li><a href="entrar.php">Iniciar Sesión</a></li>';
-                    echo '<li><a href="registro.php">Crear cuenta</a></li>';
-                }
-                ?>
+                        <?php
+                        if (isset($_SESSION['usuario'])) {
+                            echo '<li><a href="salir.php">Salir</a></li>';
+                        } else {
+                            echo '<li><a href="entrar.php">Acceder</a></li>';
+                            echo '<li><a href="registro.php">Registrate</a></li>';
+                        }
+                        ?>
+                    </div>
+                </div>
+
+
 
             </ul>
         </nav>

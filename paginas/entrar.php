@@ -15,11 +15,11 @@
     <form action="entrar-manejo.php" method="post">
         <h3>Identificate</h3>
 
-        <label for="usuario">email</label>
-        <input type="text" name="usuario" id="usuario">
+        <label for="usuario">Email</label>
+        <input type="text" name="usuario" id="usuario" required>
         
-        <label for="password">password</label>
-        <input type="password" name="password" id="password">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" required>
 
         <input type="submit" value="Iniciar Sesion" class="boton">
     </form>

@@ -35,6 +35,7 @@ html {
     flex-direction: column;
     align-items: center;
     background: #edededff;
+    min-height: 90vh;
 }
 
 .titulo {
@@ -217,6 +218,7 @@ html {
 nav {
     width: 90%;
     margin: auto;
+    padding-block: 0.5em;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -225,6 +227,7 @@ nav {
 .logo {
     display: flex;  
     align-items: center;
+    
 }
 
 .logo img{
@@ -247,13 +250,29 @@ nav {
 #menu-boton:hover {
     color: #002f6d;
 }
-
+.conjunto {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 #menu { 
     font-family: "Harabara Mais Demo", sans-serif;
     list-style: none;    
-    text-transform: lowercase;
+    
     display: flex;
     flex-direction: row;
+    
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+#menu .opciones {
+    display: flex;
+    flex-direction: row;
+    
+    margin: 0;
 }
 
 #menu li {
@@ -261,6 +280,14 @@ nav {
     cursor: pointer;
     padding-left: 2rem;
     font-size: 1.5vw;
+}
+
+#menu li p{
+    text-align: center;
+    cursor: pointer;
+    text-transform: capitalize;
+    font-size: 0.8em;
+    
 }
 
 #menu li a:hover {
@@ -545,7 +572,7 @@ footer .columnas-pie {
 
 footer .contacto, footer .redes, footer .general {
     padding: 1vw;
-    flex: 1 1 300px;
+    flex: 1 1 30em;
     text-align: center; 
 }
 
@@ -560,7 +587,7 @@ footer .derechos {
 
 /* --------------------- MEDIA QUERIES -------------------- */
 
-@media (max-width:800px) {
+/* @media (max-width:800px) {
 
     #menu-boton {
         display: block;
@@ -588,4 +615,4 @@ footer .derechos {
     #menu li {
         font-size: 1rem;
     }
-}
+} */
