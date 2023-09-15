@@ -37,6 +37,13 @@ html {
     background: #edededff;
 }
 
+.contenedor-domicilio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #edededff;
+}
+
 .titulo {
     color: #3483faff;
     font-family: "Patua One", serif;
@@ -44,6 +51,29 @@ html {
     text-align: center;
     margin-bottom: 30px;
     margin-top: 35px;
+}
+
+.domicilio-ventana {
+    width: 65%;
+    background: #ffff;
+    border-radius: 5px;
+    border: 5px solid white;
+    box-shadow: 0 0 5px #000000;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.domicilio-ventana .encabezado-detalle{
+    color: black;
+    font-family: "Patua One", serif;
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-bottom: 2px solid black;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    padding-bottom: 10px;
 }
 
 .carrito-ventana {
@@ -61,7 +91,7 @@ html {
     font-family: "Patua One", serif;
     font-size: 24px;
     display: grid;
-    grid-template-columns: 63% 37%;
+    grid-template-columns: 60% 40%;
     border-bottom: 2px solid black;
     margin-bottom: 10px;
     text-transform: uppercase;
