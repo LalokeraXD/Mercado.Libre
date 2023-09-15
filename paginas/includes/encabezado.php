@@ -30,7 +30,7 @@
             <ul id="menu">
                 <li><a href="index.php">Inicio</a></li>
                 <li><a href="index.php#postres">Productos</a></li>
-                <li><a href="index.php#direccion">Dirección</a></li>
+                
                 
                 <?php
                     if(isset($_SESSION['usuario'])) {
