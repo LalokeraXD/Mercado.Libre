@@ -1,6 +1,10 @@
 <?php
 include('includes/encabezado.php');
 include('includes/utilerias.php');
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
 ?>
 
 <div class="verproductos">
@@ -15,6 +19,7 @@ include('includes/utilerias.php');
     ver_productos('Videojuegos', $conexion);
     ver_productos('Calzado', $conexion);
     ver_productos('Hogar', $conexion);
+    ver_productos('Muebles', $conexion);
 
     mysqli_close($conexion);
     ?>
@@ -40,24 +45,34 @@ function ver_productos($categoria, $conexion)
             $imagenProducto = $renglon['imagenProducto'];
 
             $idProducto = $renglon['idProducto'];
-            $idUsuario = 1;
 
+            if (isset($_SESSION['idUsuario'])) {
+                $idUsuario = $_SESSION['idUsuario'];
+            } else {
+                $idUsuario = 0;
+            }
             echo "
                 <div class='producto-tarjeta'>
                 <h1 class='nombreProducto'>$nombreProducto</h1>
                 <h2 class='stock'>Existencias: $stock</h2>
                 <h2 class='precioProducto'>$$precioProducto</h2>
                 <img src='$imagenProducto' alt='' class='imagenProducto'>
-                <h2 class='descripcionProducto'>$descripcionProducto</h2>
+                <h2 class='descripcionProducto'>$descripcionProducto</h2>";
+            if (isset($_SESSION['idUsuario'])) {
+                echo "
                 <form action='agregar-carrito.php' method='post'>
                     <input type='hidden' value='$idProducto' name='idProducto'>
                     <input type='hidden' value='$idUsuario' name='idUsuario'>
                     <input type='submit' class='boton max' value='Agregar al carrito'>
-                </form>
-                
+                </form>";
+            }else {
+                echo "<a href='entrar.php' class='boton max'>Agregar al carrito</a>";
+            }
 
-                
-                </div>";
+
+
+
+            echo "</div>";
         }
     }
 

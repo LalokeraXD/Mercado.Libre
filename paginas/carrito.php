@@ -2,9 +2,14 @@
 include('includes/encabezado.php');
 include('includes/utilerias.php');
 
-$usuario = 0;
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
 if (isset($_SESSION['idUsuario'])) {
-    # code...
+    $usuario = $_SESSION['idUsuario'];
+} else {
+    $usuario = 0;
 }
 //Botones de aumentar y disminuir
 if (!empty($_POST['aumentar']) || !empty($_POST['disminuir'])) {
@@ -20,7 +25,7 @@ if (!empty($_POST['aumentar']) || !empty($_POST['disminuir'])) {
             $idPro = $_POST['disminuir'];
             $sql = "UPDATE carrito SET cantidadProductoCarrito = cantidadProductoCarrito - 1 WHERE idProducto = $idPro AND idUsuario = $usuario";
             $resultado = mysqli_query($conexion, $sql);
-            if ($cantidad==1) {
+            if ($cantidad == 1) {
                 $sql = "DELETE FROM carrito WHERE idProducto = $idPro AND idUsuario = $usuario";
                 $resultado = mysqli_query($conexion, $sql);
             }
