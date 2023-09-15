@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $conexion->close();
 
-    echo "Registro exitoso";
+    redireccionar("Registro exitoso","entrar.php");
 }
 
 ?>

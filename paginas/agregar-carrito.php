@@ -6,6 +6,12 @@ if (empty($_POST)) {
     return;
 }
 
+if (isset($_SESSION['idUsuario'])) {
+    $idUsuario = $_SESSION['idUsuario'];
+} else {
+    $idUsuario = 0;
+}
+
 $paginaError = 'verpostres.php';
 
 $conexion = conectar();
@@ -23,20 +29,29 @@ if ($idUsuario == '' || $idProducto == '') {
     return;
 }
 //Verificar si ya existe
-$sql = "SELECT * FROM carrito WHERE idProducto = $idProducto";
+$sql = "SELECT * FROM carrito WHERE idProducto = $idProducto AND idUsuario = $idUsuario";
 
 $resultado = mysqli_query($conexion, $sql);
-//Actualizar cantidad
+//Actualizar cantidad si ya existe en el carrito
 if (mysqli_num_rows($resultado) != 0) {
-    $sql = "UPDATE carrito SET cantidadProductoCarrito = cantidadProductoCarrito + 1 WHERE idProducto = $idProducto";
-    $resultado = mysqli_query($conexion, $sql);
+
+    if (stock($idProducto, $conexion)) {
+        //Agregar 1 al carrito del usuario
+        $sql = "UPDATE carrito SET cantidadProductoCarrito = cantidadProductoCarrito + 1 WHERE idProducto = $idProducto AND idUsuario = $idUsuario";
+        $resultado = mysqli_query($conexion, $sql);
+    }
+
 } else { //Insertar nuevo
-    $sql = "INSERT INTO carrito(idUsuario,idProducto,cantidadProductoCarrito) VALUES ($idUsuario,$idProducto,1)";
+    if (stock($idProducto, $conexion)) {
+        $sql = "INSERT INTO carrito(idUsuario,idProducto,cantidadProductoCarrito) VALUES ($idUsuario,$idProducto,1)";
+        $resultado = mysqli_query($conexion, $sql);
+    }
 
-    $resultado = mysqli_query($conexion, $sql);
+
+    mysqli_close($conexion);
+
+
 }
-
-
 
 if ($resultado) {
     redireccionar('Agregado al carrito!', 'carrito.php');
@@ -44,5 +59,5 @@ if ($resultado) {
     redireccionar('Error: ' . mysqli_error($conexion), $paginaError);
 }
 
-mysqli_close($conexion);
+
 ?>

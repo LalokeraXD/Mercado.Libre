@@ -2,32 +2,51 @@
 include('includes/encabezado.php');
 include('includes/utilerias.php');
 
-$usuario = 0;
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
 if (isset($_SESSION['idUsuario'])) {
-    # code...
+    $usuario = $_SESSION['idUsuario'];
+} else {
+    $usuario = 0;
 }
 //Botones de aumentar y disminuir
 if (!empty($_POST['aumentar']) || !empty($_POST['disminuir'])) {
+    //Realizar conexion de base de datos
     $conexion = conectar();
     if (!$conexion) {
         redireccionar('Error en la conexión.', $paginaError);
         return;
     }
+    //Si cantidad es numerica y esta en post
     if (isset($_POST['cantidad']) && is_numeric($_POST['cantidad'])) {
-        $cantidad = $_POST['cantidad'];
 
+        $cantidad = $_POST['cantidad'];
+        //disminuir y aumentar contienen idProducto
+        //Ver si idProducto no está vacio y si la cantidad en el carrito no es 0
         if (!empty($_POST['disminuir']) && $cantidad != 0) {
             $idPro = $_POST['disminuir'];
+            //disminuir del carrito
             $sql = "UPDATE carrito SET cantidadProductoCarrito = cantidadProductoCarrito - 1 WHERE idProducto = $idPro AND idUsuario = $usuario";
             $resultado = mysqli_query($conexion, $sql);
-            if ($cantidad==1) {
+            //Si al momento de disminuir la cantidad fue 1, entonces será 0, por lo tanto se elimina del carrito
+            if ($cantidad == 1) {
                 $sql = "DELETE FROM carrito WHERE idProducto = $idPro AND idUsuario = $usuario";
                 $resultado = mysqli_query($conexion, $sql);
             }
+
         } else if (!empty($_POST['aumentar'])) {
+
             $idPro = $_POST['aumentar'];
-            $sql = "UPDATE carrito SET cantidadProductoCarrito = cantidadProductoCarrito + 1 WHERE idProducto = $idPro AND idUsuario = $usuario";
-            $resultado = mysqli_query($conexion, $sql);
+            //Ver si hay stock para aumentar productos en el carrito
+            if (stock($idPro,$conexion)) {
+                $sql = "UPDATE carrito SET cantidadProductoCarrito = cantidadProductoCarrito + 1 WHERE idProducto = $idPro AND idUsuario = $usuario";
+                $resultado = mysqli_query($conexion, $sql);
+            }else {
+                redireccionar("Ya no hay stock disponible para aumentar","carrito.php");
+            }
+            
         }
 
     } else {

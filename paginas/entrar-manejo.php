@@ -5,11 +5,20 @@
     $usuario = $_POST['usuario'];
     $password = $_POST['password'];
 
-    if ($usuario = 'admin' && $password == "123") {
-        redireccionar('Bienvenido Administrador', 'index.php');
-        $_SESSION['usuario'] = 'Administrador';
+    $conexion = conectar();
+
+    $sql = "SELECT emailUsuario,nombreUsuario,idUsuario FROM usuarios WHERE emailUsuario='$usuario' AND passwordUsuario='$password'";
+    $result = $conexion->query($sql);
+
+    if ($result->num_rows == 1) {
+        redireccionar('Bienvenido '.$usuario,'index.php');
+        $row = $result->fetch_assoc();
+        $_SESSION['usuario'] = $row['emailUsuario'];
+        $_SESSION['nombre'] = $row['nombreUsuario'];
+        $_SESSION['idUsuario'] = $row['idUsuario'];
+        
     } else {
-        redireccionar('Datos incorrectos', 'entrar.php');
+        redireccionar('Datos Incorrectos','entrar.php');
     }
 
 ?>
