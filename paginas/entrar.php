@@ -18,7 +18,7 @@
         <label for="usuario">email</label>
         <input type="text" name="usuario" id="usuario">
         
-        <label for="password">passsword</label>
+        <label for="password">password</label>
         <input type="password" name="password" id="password">
 
         <input type="submit" value="Iniciar Sesion" class="boton">

@@ -7,13 +7,13 @@
 
     $conexion = conectar();
 
-    $sql = "SELECT nombreUsuario FROM usuarios WHERE nombreUsuario='$usuario' AND passwordUsuario='$password'";
+    $sql = "SELECT emailUsuario FROM usuarios WHERE emailUsuario='$usuario' AND passwordUsuario='$password'";
     $result = $conexion->query($sql);
 
     if ($result->num_rows == 1) {
         redireccionar('Bienvenido '.$usuario,'index.php');
         $row = $result->fetch_assoc();
-        $_SESSION['usuario'] = $row['nombreUsuario'];
+        $_SESSION['usuario'] = $row['emailUsuario'];
         
     } else {
         redireccionar('Datos Incorrectos','entrar.php');
