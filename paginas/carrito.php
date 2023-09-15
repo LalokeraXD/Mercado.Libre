@@ -55,7 +55,7 @@ if (!empty($_POST['aumentar']) || !empty($_POST['disminuir'])) {
     }
     mysqli_close($conexion);
     header("Location: " . $_SERVER['REQUEST_URI']);
-}
+}  
 ?>
 
 <div class="contenedor-carrito">
@@ -94,7 +94,7 @@ function ver_carrito($usuario, $conexion)
     $sql = "select * from carrito c inner join productos p on p.idProducto = c.idProducto where idUsuario = $usuario";
 
     $resultado = mysqli_query($conexion, $sql);
-
+    $numresults = mysqli_num_rows($resultado); 
     echo "<div class='renglon'>";
     if (mysqli_num_rows($resultado) > 0) {
         while ($renglon = mysqli_fetch_assoc($resultado)) {
@@ -109,7 +109,12 @@ function ver_carrito($usuario, $conexion)
             <img class='imagen-carrito' src='$imagenProducto'>
                 <div class='contenedor-prod-boton'>
                     <p class='postre'>$nombreProducto</p>
+                    <form action='remover-carrito.php' method='post'>
+                    <input type='hidden' name='producto' value='$idProducto'>
+                    <input type='hidden' name='usuario' value='$usuario'>  
+                    <input type='hidden' name='num' value='$numresults'>        
                     <button class='boton-quitar'>Eliminar</button>
+                    </form>
                 </div>
                 <p class='precio'>$$precioProducto</p>
                 <div class='contenedor-cantidad'>
