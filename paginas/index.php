@@ -6,10 +6,10 @@
         <section class="seccion-inicio" id="inicio">
 
             <div class="tarjeta-inicio">
-                <h1>Repostería <span>DulceVida</span></h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, beatae?</p>
+                <h1>Mercado <span>Libre</span></h1>
+                <p>Codo a codo, hasta que llegue lo mejor.</p>
                 <!--<button class="boton">Ver Postres</button>-->
-                <a href="verpostres.php" class="boton">Ver postres</a>
+                <a href="verpostres.php" class="boton">Categorias</a>
             </div>
 
             <div class="img-contenedor">
@@ -17,11 +17,11 @@
                 <script src="../scripts/carrusel.js" defer></script>  
 
                 <div class="carrusel">
-                    <img src="../imagenes/pastel.png" alt="">
-                    <img src="../imagenes/pastel.png" alt="">
-                    <img src="../imagenes/pastel.png" alt="">
-                    <img src="../imagenes/pastel.png" alt="">
-                    <img src="../imagenes/pastel.png" alt="">
+                    <img src="../imagenes/mochila.jpg" alt="">
+                    <img src="../imagenes/gatos.jpg" alt="">
+                    <img src="../imagenes/pc.jpg" alt="">
+                    <img src="../imagenes/sodas.jpg" alt="">
+                    <img src="../imagenes/tenis.jpg" alt="">
                 </div>
                 
                 <div class="contenedor-nav-img">
@@ -39,44 +39,44 @@
         </section>
         <!-- Fin sección de inicio-->
 
-        <!-- Sección categorías de postres -->
+        <!-- Sección categorías de postres
         <section class="seccion-categorias" id="postres">
 
             <h1 class="categoria-titulo">¿Qué se te antoja hoy?</h1>
 
             <div class="contenedor-tarjetas">               
 
-                <!-- Tarjeta pasteles-->
+                <!- Tarjeta pasteles--
                 <div class="categoria-tarjeta">
                     <img src="../imagenes/pastel_chocolate.png" alt="">
                     <h2>Pasteles</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos obcaecati ad sint distinctio.</p>
                     <a href="verpostres.php#pastel" class="boton">Ver Pasteles</a>
                 </div>
-                <!-- Fin tarjeta pasteles-->
+                <!- Fin tarjeta pasteles--
 
-                <!-- Tarjeta Mostachones-->
+                <!- Tarjeta Mostachones--
                 <div class="categoria-tarjeta">
                     <img src="../imagenes/pastel_chocolate.png" alt="">
                     <h2>Mostachones</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos obcaecati ad sint distinctio.</p>
                     <a href="verpostres.php#mostachón" class="boton">Ver Mostachones</a>
                 </div>
-                <!-- Fin tarjeta pasteles-->
+                <!- Fin tarjeta pasteles--
 
-                <!-- Tarjeta pays-->
+                <!- Tarjeta pays--
                 <div class="categoria-tarjeta">
                     <img src="../imagenes/pastel_chocolate.png" alt="">
                     <h2>Pays</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos obcaecati ad sint distinctio.</p>
                     <a href="verpostres.php#pay" class="boton">Ver Pays</a>
                 </div>
-                <!-- Fin tarjeta pays-->
+                <!- Fin tarjeta pays--
             </div>
-        </section>
+        </section>-->
         <!-- Fin sección de categorías de postres -->
 
-        <!-- Sección Dirección y horarios -->
+        <!-- Sección Dirección y horarios 
         <section class="seccion-direccion" id="direccion">
             <div class="direccion-tarjeta">
                 <div class="imagen-div">
@@ -92,7 +92,7 @@
                 </div>
             </div>
         </section>
-        <!-- Fin sección Dirección y horarios -->
+        Fin sección Dirección y horarios -->
  
 <?php
     include('includes/pie.php');

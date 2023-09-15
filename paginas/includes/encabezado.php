@@ -13,8 +13,8 @@ if (session_status() == PHP_SESSION_NONE) {
     <title>Mercado Libre</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&family=Pacifico&family=Patua+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/formulario.css">
+    <link rel="stylesheet" href="../css/index_dani.css">
+    <link rel="stylesheet" href="../css/formulario_dani.css">
     <link rel="stylesheet" href="../css/verpostres.css">
     <script src="../scripts/menu.js" defer></script>
     <script src="../scripts/carrito.js" defer></script>
@@ -38,7 +38,7 @@ if (session_status() == PHP_SESSION_NONE) {
                 <?php
                     if(isset($_SESSION['usuario'])) {
                         echo '<li><a href="salir.php">Salir</a></li>';
-                        echo '<li><a href="agregar.php">Agregar postre</a></li>';
+                        echo '<li><a href="agregar.php">Carrito</a></li>';
                     } else {
                         echo '<li><a href="entrar.php">Iniciar Sesión</a></li>';
                         echo '<li><a href="registro.php">Crear cuenta</a></li>';
