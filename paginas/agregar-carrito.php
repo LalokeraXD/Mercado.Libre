@@ -8,7 +8,7 @@ if (empty($_POST)) {
 
 if (isset($_SESSION['idUsuario'])) {
     $idUsuario = $_SESSION['idUsuario'];
-}else {
+} else {
     $idUsuario = 0;
 }
 
@@ -32,46 +32,25 @@ if ($idUsuario == '' || $idProducto == '') {
 $sql = "SELECT * FROM carrito WHERE idProducto = $idProducto AND idUsuario = $idUsuario";
 
 $resultado = mysqli_query($conexion, $sql);
-//Actualizar cantidad
+//Actualizar cantidad si ya existe en el carrito
 if (mysqli_num_rows($resultado) != 0) {
-    
 
-    //Consultar el stock existente
-    $sql = "SELECT stock FROM productos WHERE idProducto = $idProducto";
-    $resultado = mysqli_query($conexion, $sql);
-    $resultado = $resultado->fetch_assoc();
-    $stock = $resultado['stock'];
-    //Verificar que el stock no sea 0
-    if ($stock > 0) {
-        //Quitar del stock
-        $sql = "UPDATE productos SET stock = stock - 1 WHERE idProducto = $idProducto";
-        $resultado = mysqli_query($conexion,$sql);
+    if (stock($idProducto, $conexion)) {
         //Agregar 1 al carrito del usuario
         $sql = "UPDATE carrito SET cantidadProductoCarrito = cantidadProductoCarrito + 1 WHERE idProducto = $idProducto AND idUsuario = $idUsuario";
         $resultado = mysqli_query($conexion, $sql);
     }
 
-    
-
 } else { //Insertar nuevo
-    //Consultar el stock existente
-    $sql = "SELECT stock FROM productos WHERE idProducto = $idProducto";
-    $resultado = mysqli_query($conexion, $sql);
-    $resultado = $resultado->fetch_assoc();
-    $stock = $resultado['stock'];
-    //Verificar que el stock no sea 0
-    if ($stock > 0) {
-        //Quitar del stock
-        $sql = "UPDATE productos SET stock = stock - 1 WHERE idProducto = $idProducto";
-        $resultado = mysqli_query($conexion,$sql);
-        //Agregar 1 al carrito del usuario
+    if (stock($idProducto, $conexion)) {
         $sql = "INSERT INTO carrito(idUsuario,idProducto,cantidadProductoCarrito) VALUES ($idUsuario,$idProducto,1)";
         $resultado = mysqli_query($conexion, $sql);
-        mysqli_close($conexion);
-
-        
     }
-    
+
+
+    mysqli_close($conexion);
+
+
 }
 
 if ($resultado) {
