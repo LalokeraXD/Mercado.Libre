@@ -59,9 +59,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
 
+    $stmt->close();
     $conexion->close();
 
-    echo "Registro exitoso";
+    header("Location: index.php");
+
+    
 }
 
 ?>
