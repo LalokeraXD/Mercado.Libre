@@ -59,5 +59,4 @@ if ($resultado) {
     redireccionar('Error: ' . mysqli_error($conexion), $paginaError);
 }
 
-
 ?>

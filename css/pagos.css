@@ -1,0 +1,92 @@
+.pago {
+	display: flex;
+}
+
+.opciones {
+	font-size: 18px;
+}
+
+.datos-tarjeta {
+	width: 30%;
+}
+
+.imagen-tarjeta {
+	width: 70%;
+	display: flex;
+	justify-content: center;
+}
+
+.imagen-tarjeta img {
+	width: 20%;
+}
+
+.contenedor-tarjeta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #edededff;
+}
+
+.tarjeta-ventana {
+    width: 40%;
+    background: #ffff;
+    border-radius: 5px;
+    border: 5px solid white;
+    box-shadow: 0 0 5px #000000;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.tarjeta-ventana .encabezado-detalle{
+    color: black;
+    font-family: "Patua One", serif;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-bottom: 2px solid black;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.contenedor-domicilio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #edededff;
+}
+
+.domicilio-ventana {
+    width: 60%;
+    background: #ffff;
+    border-radius: 5px;
+    border: 5px solid white;
+    box-shadow: 0 0 5px #000000;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.domicilio-ventana .encabezado-detalle{
+    color: black;
+    font-family: "Patua One", serif;
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-bottom: 2px solid black;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+}
+
+.paquete {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.paquete img {
+	width: 40%;
+}

@@ -1,3 +1,31 @@
+.contenido {
+	display: flex;
+}
+
+aside {
+	width: 15%;
+	display: flex;
+	padding-left: 20px;
+    padding-top: 50px;
+    font-family: "Balsamiq Sans", sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.titulo {
+    font-family: "Balsamiq Sans", sans-serif;
+    font-size: 2rem;
+    padding-bottom: 25px;
+}
+
+.categoriaProducto {
+    display: none;
+}
+
+.verproductos {
+	width: 85%;
+}
+
 .verproducto {
     background: #ebebeb;
     padding: 3% 5% 3% 5%;

@@ -7,6 +7,13 @@ if (session_status() == PHP_SESSION_NONE) {
 
 ?>
 
+<div class="contenido">
+<aside>
+    <div class="categorias">
+        <h2 class="titulo">CATEGORIAS</h2>
+    </div> 
+</aside>
+
 <div class="verproductos">
 
     <?php
@@ -25,6 +32,8 @@ if (session_status() == PHP_SESSION_NONE) {
     ?>
 
 </div>
+
+
 
 <?php
 

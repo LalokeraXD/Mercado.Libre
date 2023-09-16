@@ -19,6 +19,7 @@ if (session_status() == PHP_SESSION_NONE) {
     <link rel="stylesheet" href="../css/formulario_dani.css">
     <link rel="stylesheet" href="../css/formulario.css">
     <link rel="stylesheet" href="../css/verpostres.css">
+    <link rel="stylesheet" href="../css/pagos.css">
     <script src="../scripts/menu.js" defer></script>
     <script src="../scripts/carrito.js" defer></script>
 </head>
