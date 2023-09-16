@@ -14,9 +14,9 @@
     $resultado = mysqli_query($conexion, $sql);
 
     if($resultado) {
-        redireccionar('Datos guardados exitosamente.', 'verpostres.php');
+        redireccionar('Datos guardados exitosamente.', 'agregar-tarjeta.php');
     } else {
-        redireccionar('Error: ' . mysql_error($conexion), 'agregar-domicilio.php');
+        redireccionar('Error: ' . mysqli_error($conexion), 'agregar-domicilio.php');
     }
 
     mysqli_close($conexion);

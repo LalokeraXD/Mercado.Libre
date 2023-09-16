@@ -1,29 +1,36 @@
 <?php
 
-    include('includes/utilerias.php');
+include('includes/utilerias.php');
 
-	// falta que hagarre el usuario de manera dinamica
 
-    $usuario = $_POST['usuario'];
-    $numTarjeta = $_POST['numero-tarjeta'];
-    $mes = $_POST['mes'];
-    $year = $_POST['year'];
-    $cvv = $_POST['seguridad'];
+// falta que hagarre el usuario de manera dinamica
 
-    $tarjetaSinEspacios = preg_replace('/\s+/', '', $numTarjeta);
+$usuario = $_POST['usuario'];
+$numTarjeta = $_POST['numero-tarjeta'];
+$mes = $_POST['mes'];
+$year = $_POST['year'];
+$cvv = $_POST['seguridad'];
 
-	$conexion = conectar();
+$tarjetaSinEspacios = preg_replace('/\s+/', '', $numTarjeta);
 
-    $sql = "UPDATE usuarios SET tarjetaUsuario = '$tarjetaSinEspacios' WHERE idUsuario = '$usuario'";
+$conexion = conectar();
 
-    $resultado = mysqli_query($conexion, $sql);
+$sql = "UPDATE usuarios SET tarjetaUsuario = '$tarjetaSinEspacios' WHERE idUsuario = '$usuario'";
 
-    if($resultado) {
-        redireccionar('Datos guardados exitosamente.', 'verpostres.php');
-    } else {
-        redireccionar('Error: ' . mysql_error($conexion), 'agregar-tarjeta.php');
-    }
+$resultado = mysqli_query($conexion, $sql);
 
-    mysqli_close($conexion);
+
+$sql = "DELETE FROM carrito WHERE idUsuario = $usuario";
+
+$resultado = mysqli_query($conexion, $sql);
+mysqli_close($conexion);
+
+if ($resultado) {
+    redireccionar('Procesando compra.', 'carrito.php');
+} else {
+    redireccionar('Error: ' . mysqli_error($conexion), 'agregar-tarjeta.php');
+}
+
+mysqli_close($conexion);
 
 ?>

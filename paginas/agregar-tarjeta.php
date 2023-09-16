@@ -2,9 +2,13 @@
 include('includes/encabezado.php');
 include('includes/utilerias.php');
 
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
 $usuario = 0;
 if (isset($_SESSION['idUsuario'])) {
-    # code...
+    $usuario = $_SESSION['idUsuario'];
 }
 ?>
 
@@ -14,7 +18,7 @@ if (isset($_SESSION['idUsuario'])) {
     <div class="tarjeta-ventana">
 		<form action="tarjeta-manejo.php" method="post">
         <div class="encabezado-detalle">
-            <input type="text" value="1" name="usuario" style="display:none;">
+            <?php echo "<input type='hidden' value='$usuario' name='usuario'>"?>
 
             <label for="numero-tarjeta">Numero de tarjeta</label>
 			<input type="text" id="numero-tarjeta" name="numero-tarjeta" placeholder="No. tarjeta">

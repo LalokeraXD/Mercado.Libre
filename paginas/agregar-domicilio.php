@@ -1,10 +1,12 @@
 <?php
 include('includes/encabezado.php');
 include('includes/utilerias.php');
-
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 $usuario = 0;
 if (isset($_SESSION['idUsuario'])) {
-    # code...
+    $usuario = $_SESSION['idUsuario'];
 }
 ?>
 
@@ -13,7 +15,7 @@ if (isset($_SESSION['idUsuario'])) {
     <div class="domicilio-ventana">
 		<form action="domicilio-manejo.php" method="post">
         <div class="encabezado-detalle">
-                <input type="text" value="1" name="usuario" style="display:none;">
+                <?php echo "<input type='hidden' value='$usuario' name='usuario' >"?>
                 <label for="domicilio">Calle y Numero</label>
                 <input type="text" id="domicilio" name="domicilio" placeholder="calle, numero">
                 <label for="postal">Codigo postal</label>

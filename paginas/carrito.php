@@ -40,13 +40,13 @@ if (!empty($_POST['aumentar']) || !empty($_POST['disminuir'])) {
 
             $idPro = $_POST['aumentar'];
             //Ver si hay stock para aumentar productos en el carrito
-            if (stock($idPro,$conexion)) {
+            if (stock($idPro, $conexion)) {
                 $sql = "UPDATE carrito SET cantidadProductoCarrito = cantidadProductoCarrito + 1 WHERE idProducto = $idPro AND idUsuario = $usuario";
                 $resultado = mysqli_query($conexion, $sql);
-            }else {
-                redireccionar("Ya no hay stock disponible para aumentar","carrito.php");
+            } else {
+                redireccionar("Ya no hay stock disponible para aumentar", "carrito.php");
             }
-            
+
         }
 
     } else {
@@ -80,9 +80,10 @@ if (!empty($_POST['aumentar']) || !empty($_POST['disminuir'])) {
         <div class="total">
             <p>Total</p>
             <p class="precio-total">$420.00</p>
-        </div>
+        </div>  
 
-        <button class="boton boton-compra">Realizar Compra</button>
+        <a href="agregar-domicilio.php"><button class="boton boton-compra">Realizar Compra</button></a>
+
 
     </div>
 </div>
@@ -94,7 +95,7 @@ function ver_carrito($usuario, $conexion)
     $sql = "select * from carrito c inner join productos p on p.idProducto = c.idProducto where idUsuario = $usuario";
 
     $resultado = mysqli_query($conexion, $sql);
-    $numresults = mysqli_num_rows($resultado); 
+    $numresults = mysqli_num_rows($resultado);
     echo "<div class='renglon'>";
     if (mysqli_num_rows($resultado) > 0) {
         while ($renglon = mysqli_fetch_assoc($resultado)) {

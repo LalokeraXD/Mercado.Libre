@@ -2,15 +2,6 @@
 	display: flex;
 }
 
-aside {
-	width: 15%;
-	display: flex;
-	padding-left: 20px;
-    padding-top: 50px;
-    font-family: "Balsamiq Sans", sans-serif;
-    font-size: 1rem;
-    text-transform: uppercase;
-}
 
 .titulo {
     font-family: "Balsamiq Sans", sans-serif;
@@ -23,7 +14,7 @@ aside {
 }
 
 .verproductos {
-	width: 85%;
+	width: 100%;
 }
 
 .verproducto {
