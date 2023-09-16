@@ -1,10 +1,10 @@
-<title>Mercado Libre</title>
 <?php
-    include('includes/utilerias.php');
-    
-    session_start();
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
 
     if(isset($_SESSION['usuario'])){
+        include('includes/utilerias.php');
         redireccionar('La sesión ya está iniciada.', 'index.php');
         die();
     }
