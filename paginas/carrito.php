@@ -80,7 +80,7 @@ if (!empty($_POST['aumentar']) || !empty($_POST['disminuir'])) {
         <div class="total">
             <p>Total</p>
             <p class="precio-total">$420.00</p>
-        </div>  
+        </div>
 
         <a href="agregar-domicilio.php"><button class="boton boton-compra">Realizar Compra</button></a>
 
@@ -96,7 +96,6 @@ function ver_carrito($usuario, $conexion)
 
     $resultado = mysqli_query($conexion, $sql);
     $numresults = mysqli_num_rows($resultado);
-    echo "<div class='renglon'>";
     if (mysqli_num_rows($resultado) > 0) {
         while ($renglon = mysqli_fetch_assoc($resultado)) {
             $idProducto = $renglon['idProducto'];
@@ -107,6 +106,7 @@ function ver_carrito($usuario, $conexion)
             $precioProducto = $precioProducto * $cantidadProducto;
 
             echo "
+            <div class='renglon'>
             <img class='imagen-carrito' src='$imagenProducto'>
                 <div class='contenedor-prod-boton'>
                     <p class='postre'>$nombreProducto</p>
@@ -135,7 +135,8 @@ function ver_carrito($usuario, $conexion)
                         </form>
                     </div>
                 </div>
-            </div>";
+            </div>
+            ";
 
         }
     }
