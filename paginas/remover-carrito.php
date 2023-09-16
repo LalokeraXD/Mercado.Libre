@@ -21,7 +21,7 @@ mysqli_close($conexion);
 if($numresults>1){
     header('refresh:0, url=carrito.php');
 }else{
-    header('refresh:0, url=index.php');
+    header('refresh:0, url=carrito.php');
 }
 
 ?>
