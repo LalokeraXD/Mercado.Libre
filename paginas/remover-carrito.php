@@ -1,8 +1,7 @@
 <?php
-include 'utilerias.php';
-
+include('includes/utilerias.php');
 if (empty($_POST)) {
-    header('refresh:0, url=../index.php');    
+    header('refresh:0, url=index.php');    
     return;
 }
 $conexion = conectar();
@@ -11,12 +10,18 @@ if (!$conexion) {
     return;
 }
 
-$idProducto = validar($_POST['idProducto']);
-$idUsuario = validar($_POST['idUsuario']);
-print($idProducto . " : ");
-print($idUsuario);
-$sql = "";
+$idProducto = validar($_POST['producto']);
+$idUsuario = validar($_POST['usuario']);
+$numresults = validar($_POST['num']);
+$sql = "DELETE FROM carrito WHERE idProducto = $idProducto AND idUsuario = $idUsuario";    
+ 
+$resultado = mysqli_query($conexion, $sql);
+mysqli_close($conexion);
 
-header('refresh:0, url=../index.php');
+if($numresults>1){
+    header('refresh:0, url=carrito.php');
+}else{
+    header('refresh:0, url=index.php');
+}
 
 ?>
